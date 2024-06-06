@@ -1,5 +1,6 @@
-[gd_scene load_steps=45 format=3 uid="uid://c807sqp4yr0to"]
+[gd_scene load_steps=47 format=3 uid="uid://c807sqp4yr0to"]
 
+[ext_resource type="Script" path="res://player.gd" id="1_a5mll"]
 [ext_resource type="Texture2D" uid="uid://bajidt6tivyti" path="res://Reaper_Man_3/PNG/PNG Sequences/Idle/0_Reaper_Man_Idle_000.png" id="1_qqvys"]
 [ext_resource type="Texture2D" uid="uid://bbtlu7upfpvgv" path="res://Reaper_Man_3/PNG/PNG Sequences/Idle/0_Reaper_Man_Idle_001.png" id="2_di70n"]
 [ext_resource type="Texture2D" uid="uid://ddqi2kk56shut" path="res://Reaper_Man_3/PNG/PNG Sequences/Idle/0_Reaper_Man_Idle_002.png" id="3_3q7un"]
@@ -42,6 +43,7 @@
 [ext_resource type="Texture2D" uid="uid://cfu1o0sjw1opr" path="res://Reaper_Man_3/PNG/PNG Sequences/Walking/0_Reaper_Man_Walking_022.png" id="40_0mj8s"]
 [ext_resource type="Texture2D" uid="uid://67uussx7g2c3" path="res://Reaper_Man_3/PNG/PNG Sequences/Walking/0_Reaper_Man_Walking_023.png" id="41_nw84j"]
 [ext_resource type="Texture2D" uid="uid://cp4dl2l5f26ab" path="res://Reaper_Man_3/PNG/PNG Sequences/Walking/0_Reaper_Man_Walking_002.png" id="42_7qnuu"]
+[ext_resource type="Script" path="res://animated_body.gd" id="43_xv6v0"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_yb7w0"]
 animations = [{
@@ -186,14 +188,16 @@ animations = [{
 radius = 39.0
 height = 98.0
 
-[node name="CharacterBody2D" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_a5mll")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="Animated Body" type="AnimatedSprite2D" parent="."]
 position = Vector2(74.5, 74.5)
 scale = Vector2(0.165556, 0.165556)
 sprite_frames = SubResource("SpriteFrames_yb7w0")
-animation = &"Idle"
-frame_progress = 0.404587
+animation = &"Walking"
+frame_progress = 0.470062
+script = ExtResource("43_xv6v0")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(72, 78)
