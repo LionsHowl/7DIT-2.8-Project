@@ -189,16 +189,16 @@ radius = 39.0
 height = 98.0
 
 [node name="Player" type="CharacterBody2D"]
+position = Vector2(94, 38)
 script = ExtResource("1_a5mll")
 
 [node name="Animated Body" type="AnimatedSprite2D" parent="."]
-position = Vector2(74.5, 74.5)
 scale = Vector2(0.165556, 0.165556)
 sprite_frames = SubResource("SpriteFrames_yb7w0")
 animation = &"Walking"
-frame_progress = 0.470062
+frame_progress = 0.0771673
 script = ExtResource("43_xv6v0")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(72, 78)
+position = Vector2(0, 3)
 shape = SubResource("CapsuleShape2D_7lj2o")
