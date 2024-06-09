@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://bwqv361igq7qu"]
+
+[ext_resource type="Script" path="res://spellbook.gd" id="1_tn0ru"]
+[ext_resource type="Texture2D" uid="uid://dp4f4l140uepv" path="res://PNG/without background/37.png" id="1_y8upm"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_t2jpf"]
+radius = 250.966
+
+[node name="Spellbook" type="Area2D"]
+script = ExtResource("1_tn0ru")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -1)
+shape = SubResource("CircleShape2D_t2jpf")
+
+[node name="Pivot" type="Marker2D" parent="."]
+position = Vector2(7.3142e-09, -19)
+rotation = -6.26371
+scale = Vector2(0.998556, 0.999912)
+
+[node name="Sprite2D" type="Sprite2D" parent="Pivot"]
+position = Vector2(-62.9232, 8.22577)
+scale = Vector2(0.111369, 0.111369)
+texture = ExtResource("1_y8upm")
+
+[node name="Shooting Point" type="Marker2D" parent="Pivot/Sprite2D"]
+position = Vector2(-222.602, -1.18598)

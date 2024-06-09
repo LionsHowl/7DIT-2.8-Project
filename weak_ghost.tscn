@@ -70,7 +70,7 @@ script = ExtResource("1_d5qgc")
 position = Vector2(-1, 0)
 sprite_frames = SubResource("SpriteFrames_qxge3")
 animation = &"Ghost_1"
-frame_progress = 0.628177
+frame_progress = 0.891424
 script = ExtResource("13_nxhxj")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

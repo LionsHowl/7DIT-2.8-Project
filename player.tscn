@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=3 uid="uid://c807sqp4yr0to"]
+[gd_scene load_steps=48 format=3 uid="uid://c807sqp4yr0to"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_a5mll"]
 [ext_resource type="Texture2D" uid="uid://bajidt6tivyti" path="res://Reaper_Man_3/PNG/PNG Sequences/Idle/0_Reaper_Man_Idle_000.png" id="1_qqvys"]
@@ -44,6 +44,7 @@
 [ext_resource type="Texture2D" uid="uid://67uussx7g2c3" path="res://Reaper_Man_3/PNG/PNG Sequences/Walking/0_Reaper_Man_Walking_023.png" id="41_nw84j"]
 [ext_resource type="Texture2D" uid="uid://cp4dl2l5f26ab" path="res://Reaper_Man_3/PNG/PNG Sequences/Walking/0_Reaper_Man_Walking_002.png" id="42_7qnuu"]
 [ext_resource type="Script" path="res://animated_body.gd" id="43_xv6v0"]
+[ext_resource type="PackedScene" uid="uid://bwqv361igq7qu" path="res://spellbook.tscn" id="45_e5lvw"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_yb7w0"]
 animations = [{
@@ -202,3 +203,6 @@ script = ExtResource("43_xv6v0")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 3)
 shape = SubResource("CapsuleShape2D_7lj2o")
+
+[node name="Spellbook" parent="." instance=ExtResource("45_e5lvw")]
+position = Vector2(-1, 12)
