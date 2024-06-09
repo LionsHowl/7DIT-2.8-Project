@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://b44xcvcq0hwg5"]
+
+[ext_resource type="Script" path="res://fire.gd" id="1_jodje"]
+[ext_resource type="Texture2D" uid="uid://b7wdmagobhj51" path="res://flame10/PNG/19.png" id="1_k6p8j"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_dg18p"]
+radius = 74.0
+height = 378.0
+
+[node name="Fire" type="Area2D"]
+top_level = true
+scale = Vector2(0.324963, 0.324963)
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_jodje")
+
+[node name="Fire Spell" type="Sprite2D" parent="."]
+position = Vector2(2.08165e-12, 2.08165e-12)
+scale = Vector2(-0.497, 0.497)
+texture = ExtResource("1_k6p8j")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-27, 18)
+rotation = 1.5708
+scale = Vector2(-1, 1)
+shape = SubResource("CapsuleShape2D_dg18p")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
