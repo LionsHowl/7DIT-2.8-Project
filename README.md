@@ -26,12 +26,12 @@ D or Right Arrow - To move the Player right.
 The spellbook follows your mouse, and it casts spells automatically.
 
 ## Credit
-For the background, I used the Roguelike pack from Kenny([www.kenney.nl](www.kenney.nl)) and was created by Kenney Vleugels ([www.kenney.nl](www.kenney.nl)) and Lynn Evers (X: [@EversLynn](https://twitter.com/everslynn))
+For the background, I used the Roguelike pack from Kenny([www.kenney.nl](https://www.kenney.nl/)) and was created by Kenney Vleugels ([www.kenney.nl](https://www.kenney.nl/)) and Lynn Evers (X: [@EversLynn](https://twitter.com/everslynn))
 
-The player was found on [CraftPix.net](craftpix.net) as part of a pack called [Free Reaper Man Chibi 2D Game Sprites](https://craftpix.net/freebies/free-reaper-man-chibi-2d-game-sprites/?num=1&count=94&sq=reaper%20man&pos=4).
+The player was found on [CraftPix.net](https://craftpix.net/) as part of a pack called [Free Reaper Man Chibi 2D Game Sprites](https://craftpix.net/freebies/free-reaper-man-chibi-2d-game-sprites/?num=1&count=94&sq=reaper%20man&pos=4).
 
-The ghosts were also found on [CraftPix.net](craftpix.net) as part of a pack called [Free Wraith Tiny Syyle 2D Sprites](https://craftpix.net/freebies/free-wraith-tiny-style-2d-sprites/?num=1&count=3&sq=wraith&pos=2).
+The ghosts were also found on [CraftPix.net](https://craftpix.net/) as part of a pack called [Free Wraith Tiny Syyle 2D Sprites](https://craftpix.net/freebies/free-wraith-tiny-style-2d-sprites/?num=1&count=3&sq=wraith&pos=2).
 
-The spellbook was also found on [CraftPix.net](craftpix.net) as part of a pack called [Free 50 RPG Book Icons](https://craftpix.net/freebies/free-50-rpg-book-icons/?num=1&count=46&sq=spell%20book&pos=10).
+The spellbook was also found on [CraftPix.net](https://craftpix.net/) as part of a pack called [Free 50 RPG Book Icons](https://craftpix.net/freebies/free-50-rpg-book-icons/?num=1&count=46&sq=spell%20book&pos=10).
 
-The fire spell was also found on [CraftPix.net](craftpix.net) as part of a pack called [Free Flame Effects Sprite Pack](https://craftpix.net/freebies/free-flame-effects-sprite-pack/?num=1&count=21&sq=flame&pos=13).
+The fire spell was also found on [CraftPix.net](https://craftpix.net/) as part of a pack called [Free Flame Effects Sprite Pack](https://craftpix.net/freebies/free-flame-effects-sprite-pack/?num=1&count=21&sq=flame&pos=13).
