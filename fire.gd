@@ -5,8 +5,8 @@ var travel_distance = 0
 
 func _physics_process(delta):
 	var direction = Vector2.LEFT.rotated(rotation)
-	position += direction * 1000 * delta
-	travel_distance += 1000 * delta
+	position += direction * 750 * delta
+	travel_distance += 750 * delta
 	if travel_distance > 2500:
 		queue_free()
 
