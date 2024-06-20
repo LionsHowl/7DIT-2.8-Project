@@ -196,8 +196,7 @@ script = ExtResource("1_a5mll")
 [node name="Animated Body" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.165556, 0.165556)
 sprite_frames = SubResource("SpriteFrames_yb7w0")
-animation = &"Walking"
-frame_progress = 0.0771673
+animation = &"Idle"
 script = ExtResource("43_xv6v0")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
