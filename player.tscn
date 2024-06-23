@@ -182,7 +182,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"Walking",
-"speed": 25.0
+"speed": 40.0
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7lj2o"]
