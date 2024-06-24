@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-var health = 50
+var health = 100
 
 
 func _physics_process(delta):
@@ -18,4 +18,5 @@ func _physics_process(delta):
 		get_node("Animated Body").play_Idle_animation()
 	
 	if overlaping_weak_mobs.size() > 0:
-		health -= 1 * overlaping_weak_mobs.size() * delta
+		health -= 5 * overlaping_weak_mobs.size() * delta
+	%"Health Bar".value = health

@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=3 uid="uid://c807sqp4yr0to"]
+[gd_scene load_steps=50 format=3 uid="uid://c807sqp4yr0to"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_a5mll"]
 [ext_resource type="Texture2D" uid="uid://bajidt6tivyti" path="res://Reaper_Man_3/PNG/PNG Sequences/Idle/0_Reaper_Man_Idle_000.png" id="1_qqvys"]
@@ -193,6 +193,13 @@ height = 98.0
 radius = 46.0
 height = 116.0
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hgev1"]
+bg_color = Color(0.262745, 0.960784, 0, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
 [node name="Player" type="CharacterBody2D"]
 position = Vector2(94, 38)
 script = ExtResource("1_a5mll")
@@ -221,3 +228,13 @@ collision_mask = 2
 position = Vector2(0, 4)
 shape = SubResource("CapsuleShape2D_d88m1")
 debug_color = Color(1, 0, 0.0784314, 0.141176)
+
+[node name="Health Bar" type="ProgressBar" parent="."]
+unique_name_in_owner = true
+offset_left = -40.0
+offset_top = 62.0
+offset_right = 44.0
+offset_bottom = 69.0
+theme_override_styles/fill = SubResource("StyleBoxFlat_hgev1")
+value = 100.0
+show_percentage = false
