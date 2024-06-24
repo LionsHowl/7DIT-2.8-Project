@@ -6,7 +6,12 @@
 
 [node name="Game" type="Node2D"]
 
-[node name="Background" parent="." instance=ExtResource("1_u6jlg")]
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 1152.0
+offset_bottom = 648.0
+color = Color(0, 0, 0, 1)
+
+[node name="Background" parent="ColorRect" instance=ExtResource("1_u6jlg")]
 
 [node name="Weak Ghost" parent="." instance=ExtResource("2_fb58j")]
 position = Vector2(45, 53)
