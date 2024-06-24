@@ -12,11 +12,11 @@ func _ready():
 func _physics_process(_delta):
 	var direction = global_position.direction_to(player.global_position)
 	
-	velocity = direction * 75
-	
-	if health <= 0:
-		velocity = direction * 0
-	move_and_slide()
+	if health > 0:
+		velocity = direction * 75
+		
+		get_node("Ghost").play_walk()
+		move_and_slide()
 
 
 func take_fire_damage():

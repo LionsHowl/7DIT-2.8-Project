@@ -119,7 +119,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("28_58jv8")
 }],
-"loop": true,
+"loop": false,
 "name": &"Ghost_1_death",
 "speed": 10.0
 }]
@@ -134,7 +134,7 @@ collision_mask = 3
 script = ExtResource("1_d5qgc")
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 1.4
+wait_time = 1.5
 one_shot = true
 
 [node name="Ghost" type="AnimatedSprite2D" parent="."]
