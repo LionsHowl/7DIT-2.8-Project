@@ -1,9 +1,13 @@
 extends AnimatedSprite2D
 
 
-func play_Idle_animation():
+func play_idle():
 	play("Idle")
 
 
-func play_Walking_animation():
+func play_walking():
 	play("Walking")
+
+
+func play_dying():
+	play("Dying")

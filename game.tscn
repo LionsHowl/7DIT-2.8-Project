@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://243h6nll0578"]
+[gd_scene load_steps=5 format=3 uid="uid://243h6nll0578"]
 
 [ext_resource type="PackedScene" uid="uid://duwrk1hc6hnqs" path="res://background.tscn" id="1_u6jlg"]
 [ext_resource type="PackedScene" uid="uid://no5lt6r0mcwc" path="res://weak_ghost.tscn" id="2_fb58j"]
 [ext_resource type="PackedScene" uid="uid://c807sqp4yr0to" path="res://player.tscn" id="2_v33ig"]
+[ext_resource type="PackedScene" uid="uid://c6lpnvoeyna2o" path="res://game_over.tscn" id="5_y8vrr"]
 
 [node name="Game" type="Node2D"]
 
@@ -40,3 +41,5 @@ scale = Vector2(0.191929, 0.191929)
 [node name="Player" parent="." instance=ExtResource("2_v33ig")]
 position = Vector2(510, 274)
 scale = Vector2(0.609116, 0.609116)
+
+[node name="Game Over" parent="." instance=ExtResource("5_y8vrr")]
