@@ -1,4 +1,4 @@
-[gd_scene load_steps=48 format=3 uid="uid://c807sqp4yr0to"]
+[gd_scene load_steps=49 format=3 uid="uid://c807sqp4yr0to"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_a5mll"]
 [ext_resource type="Texture2D" uid="uid://bajidt6tivyti" path="res://Reaper_Man_3/PNG/PNG Sequences/Idle/0_Reaper_Man_Idle_000.png" id="1_qqvys"]
@@ -189,6 +189,10 @@ animations = [{
 radius = 39.0
 height = 98.0
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_d88m1"]
+radius = 46.0
+height = 116.0
+
 [node name="Player" type="CharacterBody2D"]
 position = Vector2(94, 38)
 script = ExtResource("1_a5mll")
@@ -205,3 +209,15 @@ shape = SubResource("CapsuleShape2D_7lj2o")
 
 [node name="Spellbook" parent="." instance=ExtResource("45_e5lvw")]
 position = Vector2(-1, 12)
+
+[node name="Hurt Box" type="Node2D" parent="."]
+unique_name_in_owner = true
+
+[node name="Weak" type="Area2D" parent="Hurt Box"]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurt Box/Weak"]
+position = Vector2(0, 4)
+shape = SubResource("CapsuleShape2D_d88m1")
+debug_color = Color(1, 0, 0.0784314, 0.141176)
