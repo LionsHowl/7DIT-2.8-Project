@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=3 uid="uid://48fkypf8dkfv"]
 
 [ext_resource type="Script" path="res://story.gd" id="1_yid6g"]
-[ext_resource type="Texture2D" uid="uid://rasfveb7xhnw" path="res://story_text.png" id="2_3uags"]
-[ext_resource type="Texture2D" uid="uid://cwy67a2k8wq2p" path="res://menu_text.png" id="3_52fdc"]
+[ext_resource type="Texture2D" uid="uid://rasfveb7xhnw" path="res://Text/story_text.png" id="2_t73u4"]
+[ext_resource type="Texture2D" uid="uid://cwy67a2k8wq2p" path="res://Text/menu_text.png" id="3_xl1p6"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g1aqn"]
 bg_color = Color(1, 1, 1, 1)
@@ -33,7 +33,7 @@ color = Color(0, 0, 0, 0.588235)
 
 [node name="Story Title" type="Sprite2D" parent="ColorRect"]
 position = Vector2(576, 109)
-texture = ExtResource("2_3uags")
+texture = ExtResource("2_t73u4")
 
 [node name="Lore" type="RichTextLabel" parent="ColorRect"]
 layout_mode = 0
@@ -66,6 +66,6 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_15nui")
 [node name="Menu" type="Sprite2D" parent="ColorRect/Menu Button"]
 position = Vector2(276, 22.5)
 scale = Vector2(0.725807, 0.725807)
-texture = ExtResource("3_52fdc")
+texture = ExtResource("3_xl1p6")
 
 [connection signal="pressed" from="ColorRect/Menu Button" to="." method="_on_menu_button_pressed"]

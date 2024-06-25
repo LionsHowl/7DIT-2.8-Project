@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://cmvy0wxjnuram"]
 
-[ext_resource type="Texture2D" uid="uid://bgcmsantqjsws" path="res://ghost_breach_text_white.png" id="1_uwsmi"]
-[ext_resource type="Texture2D" uid="uid://dihvnk3u6by47" path="res://start_black_text.png" id="2_r2bgv"]
+[ext_resource type="Texture2D" uid="uid://bgcmsantqjsws" path="res://Text/ghost_breach_text_white.png" id="1_uwsmi"]
+[ext_resource type="Texture2D" uid="uid://dihvnk3u6by47" path="res://Text/start_black_text.png" id="2_r2bgv"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2wgho"]
 bg_color = Color(1, 1, 1, 1)

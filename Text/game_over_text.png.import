@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://th3jhgjej4et"
-path="res://.godot/imported/ghost_breach_text.png-8e27febec745e1eb72032ceb590f5f82.ctex"
+uid="uid://c6646nriw2t88"
+path="res://.godot/imported/game_over_text.png-e473cef23dc7298caf2bcfa63505760c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ghost_breach_text.png"
-dest_files=["res://.godot/imported/ghost_breach_text.png-8e27febec745e1eb72032ceb590f5f82.ctex"]
+source_file="res://Text/game_over_text.png"
+dest_files=["res://.godot/imported/game_over_text.png-e473cef23dc7298caf2bcfa63505760c.ctex"]
 
 [params]
 

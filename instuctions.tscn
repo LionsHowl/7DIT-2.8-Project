@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=3 uid="uid://bomdlh7d1w74d"]
 
 [ext_resource type="Script" path="res://instuctions.gd" id="1_s5i7c"]
-[ext_resource type="Texture2D" uid="uid://urbn0rp1mx8n" path="res://intstructions_text.png" id="2_hsuuq"]
-[ext_resource type="Texture2D" uid="uid://cwy67a2k8wq2p" path="res://menu_text.png" id="3_u6t6i"]
+[ext_resource type="Texture2D" uid="uid://urbn0rp1mx8n" path="res://Text/intstructions_text.png" id="2_7hvyc"]
+[ext_resource type="Texture2D" uid="uid://cwy67a2k8wq2p" path="res://Text/menu_text.png" id="3_uhtny"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uimse"]
 bg_color = Color(1, 1, 1, 1)
@@ -33,7 +33,7 @@ color = Color(0, 0, 0, 0.588235)
 
 [node name="Instructions Title" type="Sprite2D" parent="ColorRect"]
 position = Vector2(576, 109)
-texture = ExtResource("2_hsuuq")
+texture = ExtResource("2_7hvyc")
 
 [node name="Instructions" type="Label" parent="ColorRect"]
 layout_mode = 0
@@ -68,6 +68,6 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_w05hn")
 [node name="Menu" type="Sprite2D" parent="ColorRect/Menu Button"]
 position = Vector2(276, 22.5)
 scale = Vector2(0.725807, 0.725807)
-texture = ExtResource("3_u6t6i")
+texture = ExtResource("3_uhtny")
 
 [connection signal="pressed" from="ColorRect/Menu Button" to="." method="_on_menu_button_pressed"]
