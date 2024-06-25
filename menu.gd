@@ -2,6 +2,7 @@ extends CanvasLayer
 
 signal start
 signal instructions
+signal story
 
 
 func  _ready():
@@ -22,3 +23,13 @@ func _on_instructions_button_pressed():
 	visible = false
 	
 	instructions.emit()
+
+
+func _on_story_smenu():
+	visible = true
+
+
+func _on_story_button_pressed():
+	visible = false
+	
+	story.emit()

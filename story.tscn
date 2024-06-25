@@ -1,0 +1,71 @@
+[gd_scene load_steps=6 format=3 uid="uid://48fkypf8dkfv"]
+
+[ext_resource type="Script" path="res://story.gd" id="1_yid6g"]
+[ext_resource type="Texture2D" uid="uid://rasfveb7xhnw" path="res://story_text.png" id="2_3uags"]
+[ext_resource type="Texture2D" uid="uid://cwy67a2k8wq2p" path="res://menu_text.png" id="3_52fdc"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g1aqn"]
+bg_color = Color(1, 1, 1, 1)
+border_color = Color(0.8, 0.8, 0.8, 0)
+corner_radius_top_left = 100
+corner_radius_top_right = 100
+corner_radius_bottom_right = 100
+corner_radius_bottom_left = 100
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_15nui"]
+bg_color = Color(0.427451, 0.427451, 0.427451, 1)
+border_color = Color(0.8, 0.8, 0.8, 0)
+corner_radius_top_left = 100
+corner_radius_top_right = 100
+corner_radius_bottom_right = 100
+corner_radius_bottom_left = 100
+
+[node name="Story" type="CanvasLayer"]
+script = ExtResource("1_yid6g")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.588235)
+
+[node name="Story Title" type="Sprite2D" parent="ColorRect"]
+position = Vector2(576, 109)
+texture = ExtResource("2_3uags")
+
+[node name="Lore" type="RichTextLabel" parent="ColorRect"]
+layout_mode = 0
+offset_left = 128.0
+offset_top = 188.0
+offset_right = 1012.0
+offset_bottom = 493.0
+theme_override_font_sizes/normal_font_size = 35
+theme_override_font_sizes/bold_italics_font_size = 40
+bbcode_enabled = true
+text = "Oh no, there has been a [b][i]\"GHOST BREACH\"[/i][/b] and ghosts are escaping from the underworld to the human realm. Armed with a spellbook given to you by Hades when you became a Grim Reaper, you go out and fight the ghosts to send them back to the underworld."
+
+[node name="Menu Button" type="Button" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -284.0
+offset_top = 200.0
+offset_right = 284.0
+offset_bottom = 245.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_g1aqn")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_15nui")
+
+[node name="Menu" type="Sprite2D" parent="ColorRect/Menu Button"]
+position = Vector2(276, 22.5)
+scale = Vector2(0.725807, 0.725807)
+texture = ExtResource("3_52fdc")
+
+[connection signal="pressed" from="ColorRect/Menu Button" to="." method="_on_menu_button_pressed"]
