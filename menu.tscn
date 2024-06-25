@@ -31,7 +31,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 0.588235)
 
-[node name="GhostBreachTextWhite" type="Sprite2D" parent="ColorRect"]
+[node name="White Title" type="Sprite2D" parent="ColorRect"]
 position = Vector2(586.485, 172.5)
 scale = Vector2(1.33674, 1.33673)
 texture = ExtResource("2_go2rp")
@@ -53,7 +53,7 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_styles/normal = SubResource("StyleBoxFlat_y6w3k")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_egowe")
 
-[node name="StartBlackText" type="Sprite2D" parent="ColorRect/Start Button"]
+[node name="Black Start" type="Sprite2D" parent="ColorRect/Start Button"]
 position = Vector2(281, 24)
 scale = Vector2(0.925925, 0.925925)
 texture = ExtResource("3_2r8re")
