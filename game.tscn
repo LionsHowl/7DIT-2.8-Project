@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://243h6nll0578"]
+[gd_scene load_steps=8 format=3 uid="uid://243h6nll0578"]
 
 [ext_resource type="Script" path="res://game.gd" id="1_2de62"]
 [ext_resource type="PackedScene" uid="uid://c8qinc04r4gtf" path="res://background.tscn" id="1_u6jlg"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://c807sqp4yr0to" path="res://player.tscn" id="2_v33ig"]
 [ext_resource type="PackedScene" uid="uid://c6lpnvoeyna2o" path="res://game_over.tscn" id="5_y8vrr"]
 [ext_resource type="PackedScene" uid="uid://g7t6hrmcf2g3" path="res://menu.tscn" id="6_74tg7"]
+[ext_resource type="PackedScene" uid="uid://bomdlh7d1w74d" path="res://instuctions.tscn" id="7_x2by6"]
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_2de62")
@@ -50,5 +51,10 @@ scale = Vector2(0.609116, 0.609116)
 
 [node name="Menu" parent="." instance=ExtResource("6_74tg7")]
 
+[node name="Instuctions" parent="Menu" instance=ExtResource("7_x2by6")]
+visible = false
+
+[connection signal="instructions" from="Menu" to="Menu/Instuctions" method="_on_menu_instructions"]
 [connection signal="start" from="Menu" to="." method="_on_menu_start"]
 [connection signal="start" from="Menu" to="Player" method="_on_menu_start"]
+[connection signal="imenu" from="Menu/Instuctions" to="Menu" method="_on_instuctions_imenu"]
