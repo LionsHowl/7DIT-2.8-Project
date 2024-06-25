@@ -1,16 +1,20 @@
-[gd_scene load_steps=5 format=3 uid="uid://243h6nll0578"]
+[gd_scene load_steps=7 format=3 uid="uid://243h6nll0578"]
 
-[ext_resource type="PackedScene" uid="uid://duwrk1hc6hnqs" path="res://background.tscn" id="1_u6jlg"]
+[ext_resource type="Script" path="res://game.gd" id="1_2de62"]
+[ext_resource type="PackedScene" uid="uid://c8qinc04r4gtf" path="res://background.tscn" id="1_u6jlg"]
 [ext_resource type="PackedScene" uid="uid://no5lt6r0mcwc" path="res://weak_ghost.tscn" id="2_fb58j"]
 [ext_resource type="PackedScene" uid="uid://c807sqp4yr0to" path="res://player.tscn" id="2_v33ig"]
 [ext_resource type="PackedScene" uid="uid://c6lpnvoeyna2o" path="res://game_over.tscn" id="5_y8vrr"]
+[ext_resource type="PackedScene" uid="uid://g7t6hrmcf2g3" path="res://menu.tscn" id="6_74tg7"]
 
 [node name="Game" type="Node2D"]
+script = ExtResource("1_2de62")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 offset_right = 1152.0
 offset_bottom = 648.0
 color = Color(0, 0, 0, 1)
+metadata/_edit_lock_ = true
 
 [node name="Background" parent="ColorRect" instance=ExtResource("1_u6jlg")]
 
@@ -43,3 +47,8 @@ position = Vector2(510, 274)
 scale = Vector2(0.609116, 0.609116)
 
 [node name="Game Over" parent="." instance=ExtResource("5_y8vrr")]
+
+[node name="Menu" parent="." instance=ExtResource("6_74tg7")]
+
+[connection signal="start" from="Menu" to="." method="_on_menu_start"]
+[connection signal="start" from="Menu" to="Player" method="_on_menu_start"]

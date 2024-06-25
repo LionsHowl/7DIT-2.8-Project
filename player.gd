@@ -3,7 +3,7 @@ extends CharacterBody2D
 signal dead
 
 var health = 100
-var status = "Alive"
+var status = "Paused"
 var end
 var timer
 
@@ -47,3 +47,7 @@ func _on_dead():
 
 func _on_timer_timeout():
 	end.visible = true
+
+
+func _on_menu_start():
+	status = "Alive"
