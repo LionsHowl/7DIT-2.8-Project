@@ -33,3 +33,7 @@ func _on_story_button_pressed():
 	visible = false
 	
 	story.emit()
+
+
+func _on_game_over_menu():
+	visible = true

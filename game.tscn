@@ -49,6 +49,7 @@ position = Vector2(510, 274)
 scale = Vector2(0.609116, 0.609116)
 
 [node name="Game Over" parent="." instance=ExtResource("5_y8vrr")]
+visible = false
 
 [node name="Menu" parent="." instance=ExtResource("6_74tg7")]
 
@@ -58,6 +59,7 @@ visible = false
 [node name="Story" parent="Menu" instance=ExtResource("8_ut5mi")]
 visible = false
 
+[connection signal="menu" from="Game Over" to="Menu" method="_on_game_over_menu"]
 [connection signal="instructions" from="Menu" to="Menu/Instuctions" method="_on_menu_instructions"]
 [connection signal="start" from="Menu" to="." method="_on_menu_start"]
 [connection signal="start" from="Menu" to="Player" method="_on_menu_start"]
