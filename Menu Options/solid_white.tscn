@@ -48,7 +48,7 @@ grow_vertical = 2
 theme_override_styles/normal = SubResource("StyleBoxFlat_seny2")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_mhld1")
 
-[node name="StartWhiteText" type="Sprite2D" parent="ColorRect/Start Button"]
+[node name="White Start" type="Sprite2D" parent="ColorRect/Start Button"]
 position = Vector2(284, 22.5)
 scale = Vector2(0.703125, 0.703125)
 texture = ExtResource("2_kvxtf")
