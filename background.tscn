@@ -5154,7 +5154,8 @@ separation = Vector2i(1, 1)
 4:14/0/physics_layer_0/angular_velocity = 0.0
 
 [sub_resource type="TileSet" id="TileSet_do1oj"]
-physics_layer_0/collision_layer = 1
+physics_layer_0/collision_layer = 4
+physics_layer_0/collision_mask = 4
 sources/0 = SubResource("TileSetAtlasSource_e5jky")
 pattern_0 = SubResource("TileMapPattern_5wurq")
 pattern_1 = SubResource("TileMapPattern_q47xn")

@@ -267,6 +267,8 @@ corner_radius_bottom_left = 5
 
 [node name="Player" type="CharacterBody2D"]
 position = Vector2(94, 38)
+collision_layer = 5
+collision_mask = 5
 script = ExtResource("1_a5mll")
 
 [node name="Animated Body" type="AnimatedSprite2D" parent="."]
@@ -288,7 +290,7 @@ unique_name_in_owner = true
 
 [node name="Weak" type="Area2D" parent="Hurt Box"]
 collision_layer = 0
-collision_mask = 2
+collision_mask = 8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hurt Box/Weak"]
 position = Vector2(0, 4)

@@ -28,3 +28,37 @@ func take_fire_damage():
 
 func _on_timer_timeout():
 	queue_free()
+
+
+func _on_menu_start():
+	position = Vector2(-55, -30)
+	visible = true
+
+
+func _on_menu_start2():
+	position = Vector2(35, -40)
+	visible = true
+
+
+func _on_menu_start3():
+	position = Vector2(-30, 75)
+	visible = true
+
+
+func _on_menu_start4():
+	position = Vector2(1165, -35)
+	visible = true
+
+
+func _on_menu_start5():
+	position = Vector2(1200, 680)
+	visible = true
+
+
+func _on_menu_start6():
+	position = Vector2(-45, 675)
+	visible = true
+
+
+func _on_game_over_menu():
+	visible = false

@@ -129,8 +129,8 @@ radius = 108.0
 height = 330.0
 
 [node name="Weak Ghost" type="CharacterBody2D"]
-collision_layer = 3
-collision_mask = 3
+collision_layer = 11
+collision_mask = 11
 script = ExtResource("1_d5qgc")
 
 [node name="Timer" type="Timer" parent="."]

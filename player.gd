@@ -2,8 +2,8 @@ extends CharacterBody2D
 
 signal dead
 
-var health = 100
 var status = "Paused"
+var health
 var end
 var timer
 
@@ -51,3 +51,13 @@ func _on_timer_timeout():
 
 func _on_menu_start():
 	status = "Alive"
+	position = Vector2(560, 245)
+	visible = true
+	health = 100
+	
+	get_node("Spellbook").visible = true
+	%"Health Bar".visible = true
+
+
+func _on_game_over_menu():
+	visible = false
