@@ -28,6 +28,7 @@ texture = ExtResource("1_y8upm")
 position = Vector2(-153.584, 94.5887)
 
 [node name="Fire" parent="Pivot/Spellbook/Shooting Point" instance=ExtResource("3_dg1ec")]
+visible = false
 scale = Vector2(0.125, 0.125)
 
 [node name="Timer" type="Timer" parent="."]
