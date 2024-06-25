@@ -1,10 +1,12 @@
-[gd_scene load_steps=8 format=3 uid="uid://g7t6hrmcf2g3"]
+[gd_scene load_steps=13 format=3 uid="uid://g7t6hrmcf2g3"]
 
 [ext_resource type="Script" path="res://menu.gd" id="1_6cksp"]
 [ext_resource type="Texture2D" uid="uid://bgcmsantqjsws" path="res://ghost_breach_text_white.png" id="2_go2rp"]
 [ext_resource type="Texture2D" uid="uid://dihvnk3u6by47" path="res://start_black_text.png" id="3_2r8re"]
 [ext_resource type="Texture2D" uid="uid://qrdu5nwrggaf" path="res://instructions_button_text.png" id="4_261gv"]
 [ext_resource type="Texture2D" uid="uid://cuy1kt3bowmxo" path="res://story_button_text.png" id="5_6idmu"]
+[ext_resource type="Texture2D" uid="uid://ieun8hl7jcup" path="res://quit_text.png" id="6_3y1qb"]
+[ext_resource type="Script" path="res://confirmation.gd" id="7_3nnpq"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y6w3k"]
 bg_color = Color(1, 1, 1, 1)
@@ -21,6 +23,15 @@ corner_radius_top_left = 100
 corner_radius_top_right = 100
 corner_radius_bottom_right = 100
 corner_radius_bottom_left = 100
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_soj7x"]
+bg_color = Color(1, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j4653"]
+bg_color = Color(0.470588, 0.643137, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n77fq"]
+bg_color = Color(0, 1, 0, 1)
 
 [node name="Menu" type="CanvasLayer"]
 script = ExtResource("1_6cksp")
@@ -104,6 +115,72 @@ position = Vector2(284, 22)
 scale = Vector2(0.7, 0.7)
 texture = ExtResource("5_6idmu")
 
+[node name="Quit Button" type="Button" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -284.0
+offset_top = 231.0
+offset_right = 284.0
+offset_bottom = 276.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_y6w3k")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_egowe")
+
+[node name="Black Quit" type="Sprite2D" parent="ColorRect/Quit Button"]
+position = Vector2(284, 22)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("6_3y1qb")
+
+[node name="Confirmation" type="ColorRect" parent="ColorRect/Quit Button"]
+visible = false
+layout_mode = 0
+offset_left = -1.0
+offset_top = -348.0
+offset_right = 575.0
+offset_bottom = -115.0
+color = Color(0, 0, 0, 1)
+script = ExtResource("7_3nnpq")
+
+[node name="Confirmation Message" type="Label" parent="ColorRect/Quit Button/Confirmation"]
+layout_mode = 0
+offset_left = 38.0
+offset_top = 29.0
+offset_right = 523.0
+offset_bottom = 68.0
+theme_override_font_sizes/font_size = 31
+text = "Are you sure you want to quit the game?"
+autowrap_mode = 2
+
+[node name="No" type="Button" parent="ColorRect/Quit Button/Confirmation"]
+layout_mode = 0
+offset_left = 484.0
+offset_top = 184.0
+offset_right = 543.0
+offset_bottom = 212.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_soj7x")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_j4653")
+text = "No"
+
+[node name="Yes" type="Button" parent="ColorRect/Quit Button/Confirmation"]
+offset_left = 398.0
+offset_top = 184.0
+offset_right = 457.0
+offset_bottom = 212.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_n77fq")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_j4653")
+text = "Yes"
+
 [connection signal="pressed" from="ColorRect/Start Button" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="ColorRect/Instructions Button" to="." method="_on_instructions_button_pressed"]
 [connection signal="pressed" from="ColorRect/Story Button" to="." method="_on_story_button_pressed"]
+[connection signal="pressed" from="ColorRect/Quit Button" to="ColorRect/Quit Button/Confirmation" method="_on_quit_button_pressed"]
+[connection signal="pressed" from="ColorRect/Quit Button/Confirmation/No" to="ColorRect/Quit Button/Confirmation" method="_on_no_pressed"]
+[connection signal="pressed" from="ColorRect/Quit Button/Confirmation/Yes" to="ColorRect/Quit Button/Confirmation" method="_on_yes_pressed"]
