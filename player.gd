@@ -22,9 +22,9 @@ func _physics_process(delta):
 		velocity = direction * 150
 		
 		if health > 0:
-			if Input.is_action_just_pressed("move_left"):
+			if Input.is_action_pressed("move_left"):
 				facing = "Left"
-			elif Input.is_action_just_pressed("move_right"):
+			elif Input.is_action_pressed("move_right"):
 				facing = "Right"
 			move_and_slide()
 			if velocity.length() > 0:
