@@ -51,17 +51,10 @@ texture = ExtResource("2_rfm2n")
 
 [node name="Start Button" type="Button" parent="ColorRect"]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -284.0
-offset_top = -25.0
-offset_right = 284.0
-offset_bottom = 20.0
-grow_horizontal = 2
-grow_vertical = 2
+offset_left = 292.5
+offset_top = 284.0
+offset_right = 860.5
+offset_bottom = 329.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_styles/normal = SubResource("StyleBoxFlat_y6w3k")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_egowe")
@@ -73,17 +66,10 @@ texture = ExtResource("3_5wkug")
 
 [node name="Instructions Button" type="Button" parent="ColorRect"]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -284.0
-offset_top = 60.5
-offset_right = 284.0
-offset_bottom = 105.5
-grow_horizontal = 2
-grow_vertical = 2
+offset_left = 292.5
+offset_top = 369.5
+offset_right = 860.5
+offset_bottom = 414.5
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_styles/normal = SubResource("StyleBoxFlat_y6w3k")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_egowe")
@@ -95,17 +81,10 @@ texture = ExtResource("4_po4sk")
 
 [node name="Story Button" type="Button" parent="ColorRect"]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -284.0
-offset_top = 146.0
-offset_right = 284.0
-offset_bottom = 191.0
-grow_horizontal = 2
-grow_vertical = 2
+offset_left = 292.5
+offset_top = 455.0
+offset_right = 860.5
+offset_bottom = 500.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_styles/normal = SubResource("StyleBoxFlat_y6w3k")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_egowe")
@@ -117,17 +96,10 @@ texture = ExtResource("5_35vaf")
 
 [node name="Quit Button" type="Button" parent="ColorRect"]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -284.0
-offset_top = 231.0
-offset_right = 284.0
-offset_bottom = 276.0
-grow_horizontal = 2
-grow_vertical = 2
+offset_left = 292.5
+offset_top = 540.0
+offset_right = 860.5
+offset_bottom = 585.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_styles/normal = SubResource("StyleBoxFlat_y6w3k")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_egowe")
@@ -169,6 +141,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_j4653")
 text = "No"
 
 [node name="Yes" type="Button" parent="ColorRect/Quit Button/Confirmation"]
+layout_mode = 0
 offset_left = 398.0
 offset_top = 184.0
 offset_right = 457.0
