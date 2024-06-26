@@ -6,6 +6,7 @@ var status = "Paused"
 var health
 var end
 var timer
+var facing
 
 
 func _ready():
@@ -21,11 +22,21 @@ func _physics_process(delta):
 		velocity = direction * 150
 		
 		if health > 0:
+			if Input.is_action_just_pressed("move_left"):
+				facing = "Left"
+			elif Input.is_action_just_pressed("move_right"):
+				facing = "Right"
 			move_and_slide()
 			if velocity.length() > 0:
-				%"Animated Body".play_walking()
+				if facing == "Right":
+					%"Animated Body".play_walking()
+				else:
+					%"Animated Body".play_walkingl()
 			else:
-				%"Animated Body".play_idle()
+				if facing == "Right":
+					%"Animated Body".play_idle()
+				else:
+					%"Animated Body".play_idlel()
 		
 		if overlaping_weak_mobs.size() > 0:
 			health -= 5 * overlaping_weak_mobs.size() * delta
@@ -41,7 +52,10 @@ func _on_dead():
 	%"Health Bar".visible = false
 	get_node("Spellbook").visible = false
 	get_tree().paused = true
-	%"Animated Body".play_dying()
+	if facing == "Right":
+		%"Animated Body".play_dying()
+	else:
+		%"Animated Body".play_dyingl()
 	timer.start()
 
 
