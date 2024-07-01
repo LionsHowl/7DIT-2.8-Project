@@ -47,6 +47,17 @@ move_down={
 ]
 }
 
+[layer_names]
+
+2d_physics/layer_1="Wave 1"
+2d_physics/layer_2="Wave 2 Weak"
+2d_physics/layer_3="Wave 2 Mid"
+2d_physics/layer_4="Wave 3 Weak"
+2d_physics/layer_5="Wave 3 Mid"
+2d_physics/layer_6="Wave 3 Strong"
+2d_physics/layer_7="Screen"
+2d_physics/layer_8="Player"
+
 [rendering]
 
 renderer/rendering_method="gl_compatibility"

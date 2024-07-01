@@ -129,8 +129,8 @@ radius = 109.0
 height = 308.0
 
 [node name="Mid Ghost" type="CharacterBody2D"]
-collision_layer = 19
-collision_mask = 19
+collision_layer = 128
+collision_mask = 128
 script = ExtResource("1_p0acf")
 
 [node name="Animations" type="AnimatedSprite2D" parent="."]

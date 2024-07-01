@@ -25,61 +25,85 @@ metadata/_edit_lock_ = true
 visible = false
 position = Vector2(-20, 2.08165e-12)
 scale = Vector2(0.191929, 0.191929)
+collision_layer = 1
+collision_mask = 129
 
 [node name="Weak Ghost2" parent="." instance=ExtResource("2_fb58j")]
 visible = false
 position = Vector2(35, -40)
 scale = Vector2(0.191929, 0.191929)
+collision_layer = 1
+collision_mask = 129
 
 [node name="Weak Ghost3" parent="." instance=ExtResource("2_fb58j")]
 visible = false
 position = Vector2(-20, 75)
 scale = Vector2(0.191929, 0.191929)
+collision_layer = 1
+collision_mask = 129
 
 [node name="Weak Ghost4" parent="." instance=ExtResource("2_fb58j")]
 visible = false
 position = Vector2(1165, -35)
 scale = Vector2(0.191929, 0.191929)
+collision_layer = 1
+collision_mask = 129
 
 [node name="Weak Ghost5" parent="." instance=ExtResource("2_fb58j")]
 visible = false
 position = Vector2(1200, 680)
 scale = Vector2(0.191929, 0.191929)
+collision_layer = 1
+collision_mask = 129
 
 [node name="Weak Ghost6" parent="." instance=ExtResource("2_fb58j")]
 visible = false
 position = Vector2(-45, 675)
 scale = Vector2(0.191929, 0.191929)
+collision_layer = 1
+collision_mask = 129
 
 [node name="Weak Ghost7" parent="." instance=ExtResource("2_fb58j")]
 visible = false
 position = Vector2(-55, -30)
 scale = Vector2(0.191929, 0.191929)
+collision_layer = 2
+collision_mask = 134
 
 [node name="Weak Ghost8" parent="." instance=ExtResource("2_fb58j")]
 visible = false
 position = Vector2(35, -40)
 scale = Vector2(0.191929, 0.191929)
+collision_layer = 2
+collision_mask = 134
 
 [node name="Weak Ghost9" parent="." instance=ExtResource("2_fb58j")]
 visible = false
 position = Vector2(-35, 85)
 scale = Vector2(0.191929, 0.191929)
+collision_layer = 2
+collision_mask = 134
 
 [node name="Weak Ghost10" parent="." instance=ExtResource("2_fb58j")]
 visible = false
 position = Vector2(1165, -35)
 scale = Vector2(0.191929, 0.191929)
+collision_layer = 2
+collision_mask = 134
 
 [node name="Weak Ghost11" parent="." instance=ExtResource("2_fb58j")]
 visible = false
 position = Vector2(1200, 680)
 scale = Vector2(0.191929, 0.191929)
+collision_layer = 2
+collision_mask = 134
 
 [node name="Weak Ghost12" parent="." instance=ExtResource("2_fb58j")]
 visible = false
 position = Vector2(-45, 675)
 scale = Vector2(0.191929, 0.191929)
+collision_layer = 2
+collision_mask = 134
 
 [node name="Mid Ghost" parent="." instance=ExtResource("4_s7aa7")]
 visible = false
