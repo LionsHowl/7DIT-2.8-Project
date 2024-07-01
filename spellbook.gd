@@ -13,7 +13,7 @@ func _process(_delta):
 func shoot():
 	const FIRE = preload("res://fire.tscn")
 	var new_fire = FIRE.instantiate()
-	var shooting_point = $"Pivot/Spellbook/Shooting Point"
+	var shooting_point = get_node("Shooting Point")
 	
 	new_fire.global_position = shooting_point.global_position
 	new_fire.global_rotation = shooting_point.global_rotation
