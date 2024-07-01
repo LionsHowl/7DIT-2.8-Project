@@ -86,7 +86,7 @@ func _on_game_over_menu8():
 
 func _on_game_over_menu9():
 	visible = false
-	position = Vector2(-30, 75)
+	position = Vector2(-35, 85)
 
 
 func _on_game_over_menu10():

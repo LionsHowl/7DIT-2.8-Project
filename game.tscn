@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://243h6nll0578"]
+[gd_scene load_steps=10 format=3 uid="uid://243h6nll0578"]
 
 [ext_resource type="Script" path="res://game.gd" id="1_2de62"]
 [ext_resource type="PackedScene" uid="uid://c8qinc04r4gtf" path="res://background.tscn" id="1_u6jlg"]
 [ext_resource type="PackedScene" uid="uid://no5lt6r0mcwc" path="res://weak_ghost.tscn" id="2_fb58j"]
 [ext_resource type="PackedScene" uid="uid://c807sqp4yr0to" path="res://player.tscn" id="2_v33ig"]
+[ext_resource type="PackedScene" uid="uid://dhc1wtbcyfyp5" path="res://mid_ghost.tscn" id="4_s7aa7"]
 [ext_resource type="PackedScene" uid="uid://c6lpnvoeyna2o" path="res://game_over.tscn" id="5_y8vrr"]
 [ext_resource type="PackedScene" uid="uid://g7t6hrmcf2g3" path="res://menu.tscn" id="6_74tg7"]
 [ext_resource type="PackedScene" uid="uid://bomdlh7d1w74d" path="res://instuctions.tscn" id="7_x2by6"]
@@ -62,7 +63,7 @@ scale = Vector2(0.191929, 0.191929)
 
 [node name="Weak Ghost9" parent="." instance=ExtResource("2_fb58j")]
 visible = false
-position = Vector2(-30, 75)
+position = Vector2(-35, 85)
 scale = Vector2(0.191929, 0.191929)
 
 [node name="Weak Ghost10" parent="." instance=ExtResource("2_fb58j")]
@@ -79,6 +80,34 @@ scale = Vector2(0.191929, 0.191929)
 visible = false
 position = Vector2(-45, 675)
 scale = Vector2(0.191929, 0.191929)
+
+[node name="Mid Ghost" parent="." instance=ExtResource("4_s7aa7")]
+visible = false
+position = Vector2(-20, 25)
+scale = Vector2(0.192, 0.192)
+collision_layer = 4
+collision_mask = 134
+
+[node name="Mid Ghost2" parent="." instance=ExtResource("4_s7aa7")]
+visible = false
+position = Vector2(1180, 100)
+scale = Vector2(0.192, 0.192)
+collision_layer = 4
+collision_mask = 134
+
+[node name="Mid Ghost3" parent="." instance=ExtResource("4_s7aa7")]
+visible = false
+position = Vector2(1135, 700)
+scale = Vector2(0.192, 0.192)
+collision_layer = 4
+collision_mask = 134
+
+[node name="Mid Ghost4" parent="." instance=ExtResource("4_s7aa7")]
+visible = false
+position = Vector2(25, 685)
+scale = Vector2(0.192, 0.192)
+collision_layer = 4
+collision_mask = 134
 
 [node name="Player" parent="." instance=ExtResource("2_v33ig")]
 visible = false
@@ -102,6 +131,10 @@ visible = false
 [connection signal="wave_2" from="." to="Weak Ghost10" method="_on_game_wave_2"]
 [connection signal="wave_2" from="." to="Weak Ghost11" method="_on_game_wave_2"]
 [connection signal="wave_2" from="." to="Weak Ghost12" method="_on_game_wave_2"]
+[connection signal="wave_2" from="." to="Mid Ghost" method="_on_game_wave_2"]
+[connection signal="wave_2" from="." to="Mid Ghost2" method="_on_game_wave_2"]
+[connection signal="wave_2" from="." to="Mid Ghost3" method="_on_game_wave_2"]
+[connection signal="wave_2" from="." to="Mid Ghost4" method="_on_game_wave_2"]
 [connection signal="banished" from="Weak Ghost" to="." method="_on_ghost_banished"]
 [connection signal="banished" from="Weak Ghost2" to="." method="_on_ghost_banished"]
 [connection signal="banished" from="Weak Ghost3" to="." method="_on_ghost_banished"]
@@ -114,6 +147,10 @@ visible = false
 [connection signal="banished" from="Weak Ghost10" to="." method="_on_ghost_banished"]
 [connection signal="banished" from="Weak Ghost11" to="." method="_on_ghost_banished"]
 [connection signal="banished" from="Weak Ghost12" to="." method="_on_ghost_banished"]
+[connection signal="banished" from="Mid Ghost" to="." method="_on_ghost_banished"]
+[connection signal="banished" from="Mid Ghost2" to="." method="_on_ghost_banished"]
+[connection signal="banished" from="Mid Ghost3" to="." method="_on_ghost_banished"]
+[connection signal="banished" from="Mid Ghost4" to="." method="_on_ghost_banished"]
 [connection signal="menu" from="Game Over" to="Weak Ghost" method="_on_game_over_menu"]
 [connection signal="menu" from="Game Over" to="Weak Ghost2" method="_on_game_over_menu"]
 [connection signal="menu" from="Game Over" to="Weak Ghost3" method="_on_game_over_menu"]
@@ -126,6 +163,10 @@ visible = false
 [connection signal="menu" from="Game Over" to="Weak Ghost10" method="_on_game_over_menu10"]
 [connection signal="menu" from="Game Over" to="Weak Ghost11" method="_on_game_over_menu11"]
 [connection signal="menu" from="Game Over" to="Weak Ghost12" method="_on_game_over_menu12"]
+[connection signal="menu" from="Game Over" to="Mid Ghost" method="_on_game_over_menu"]
+[connection signal="menu" from="Game Over" to="Mid Ghost2" method="_on_game_over_menu2"]
+[connection signal="menu" from="Game Over" to="Mid Ghost3" method="_on_game_over_menu3"]
+[connection signal="menu" from="Game Over" to="Mid Ghost4" method="_on_game_over_menu4"]
 [connection signal="menu" from="Game Over" to="Player" method="_on_game_over_menu"]
 [connection signal="menu" from="Game Over" to="Menu" method="_on_game_over_menu"]
 [connection signal="instructions" from="Menu" to="Menu/Instuctions" method="_on_menu_instructions"]
@@ -142,6 +183,10 @@ visible = false
 [connection signal="start" from="Menu" to="Weak Ghost10" method="_on_menu_start_extras"]
 [connection signal="start" from="Menu" to="Weak Ghost11" method="_on_menu_start_extras"]
 [connection signal="start" from="Menu" to="Weak Ghost12" method="_on_menu_start_extras"]
+[connection signal="start" from="Menu" to="Mid Ghost" method="_on_menu_start"]
+[connection signal="start" from="Menu" to="Mid Ghost2" method="_on_menu_start"]
+[connection signal="start" from="Menu" to="Mid Ghost3" method="_on_menu_start"]
+[connection signal="start" from="Menu" to="Mid Ghost4" method="_on_menu_start"]
 [connection signal="start" from="Menu" to="Player" method="_on_menu_start"]
 [connection signal="story" from="Menu" to="Menu/Story" method="_on_menu_story"]
 [connection signal="imenu" from="Menu/Instuctions" to="Menu" method="_on_instuctions_imenu"]

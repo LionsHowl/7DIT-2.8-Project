@@ -16,7 +16,7 @@ func _physics_process(_delta):
 	var direction = global_position.direction_to(player.global_position)
 	
 	if health > 0:
-		velocity = direction * 150
+		velocity = direction * 100
 		
 		get_node("Animations").play_movement()
 		move_and_slide()
@@ -36,5 +36,33 @@ func _on_timer_timeout():
 
 
 func reset():
-	health = 2
+	health = 3
 	visible = true
+
+
+func _on_game_over_menu():
+	visible = false
+	position = Vector2(-20, 25)
+
+
+func _on_game_over_menu2():
+	visible = false
+	position = Vector2(1180, 100)
+
+
+func _on_game_over_menu3():
+	visible = false
+	position = Vector2(1135, 700)
+
+
+func _on_game_over_menu4():
+	visible = false
+	position = Vector2(25, 685)
+
+
+func _on_game_wave_2():
+	reset()
+
+
+func _on_menu_start():
+	health = 0
