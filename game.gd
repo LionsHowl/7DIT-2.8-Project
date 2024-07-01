@@ -2,7 +2,7 @@ extends Node2D
 
 signal wave_2
 
-var mob_banished = 0
+var mob_banished
 var wave
 
 
@@ -13,6 +13,7 @@ func _enter_tree():
 func _on_menu_start():
 	get_tree().paused = false
 	wave = 1
+	mob_banished = 0
 
 
 func _on_ghost_banished(): 
