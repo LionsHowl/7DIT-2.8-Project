@@ -8,7 +8,7 @@ func _physics_process(delta):
 	position += direction * 750 * delta
 	travel_distance += 750 * delta
 	
-	if travel_distance > 2500:
+	if travel_distance > 576:
 		queue_free()
 
 
