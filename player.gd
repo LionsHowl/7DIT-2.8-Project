@@ -48,10 +48,10 @@ func _physics_process(delta):
 
 func _on_dead():
 	timer = get_node("Timer")
-	
 	%"Health Bar".visible = false
 	get_node("Spellbook").visible = false
 	get_tree().paused = true
+	
 	if facing == "Right":
 		%"Animated Body".play_dying()
 	else:

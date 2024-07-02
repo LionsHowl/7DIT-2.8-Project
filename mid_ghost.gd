@@ -24,6 +24,7 @@ func _physics_process(_delta):
 
 func take_fire_damage():
 	health -= 1
+	
 	if health == 0:
 		get_node("Animations").play_dying()
 		timer.start()
