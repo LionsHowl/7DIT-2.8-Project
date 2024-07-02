@@ -142,6 +142,11 @@ script = ExtResource("29_43x3x")
 position = Vector2(-23, -44)
 shape = SubResource("CapsuleShape2D_meshf")
 
-[node name="Timer" type="Timer" parent="."]
+[node name="Death" type="Timer" parent="."]
 
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[node name="Slowness" type="Timer" parent="."]
+wait_time = 2.5
+one_shot = true
+
+[connection signal="timeout" from="Death" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="Slowness" to="." method="_on_slowness_timeout"]

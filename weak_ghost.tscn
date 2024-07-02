@@ -133,10 +133,6 @@ collision_layer = 0
 collision_mask = 128
 script = ExtResource("1_d5qgc")
 
-[node name="Timer" type="Timer" parent="."]
-wait_time = 1.5
-one_shot = true
-
 [node name="Ghost" type="AnimatedSprite2D" parent="."]
 position = Vector2(-1, 0)
 sprite_frames = SubResource("SpriteFrames_qxge3")
@@ -147,4 +143,13 @@ script = ExtResource("13_nxhxj")
 position = Vector2(-6, -26)
 shape = SubResource("CapsuleShape2D_6mkd4")
 
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[node name="Death" type="Timer" parent="."]
+wait_time = 1.5
+one_shot = true
+
+[node name="Slowness" type="Timer" parent="."]
+wait_time = 2.5
+one_shot = true
+
+[connection signal="timeout" from="Death" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="Slowness" to="." method="_on_slowness_timeout"]

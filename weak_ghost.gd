@@ -4,19 +4,22 @@ signal banished
 
 var player
 var health
-var timer
+var death
+var slow
+var speed = 75
 
 
 func _ready():
 	player = get_node("/root/Game/Player")
-	timer = get_node("Timer")
+	death = get_node("Death")
+	slow = get_node("Slowness")
 
 
 func _physics_process(_delta):
 	var direction = global_position.direction_to(player.global_position)
 	
 	if health > 0:
-		velocity = direction * 75
+		velocity = direction * speed
 		
 		get_node("Ghost").play_walk()
 		move_and_slide()
@@ -25,10 +28,22 @@ func _physics_process(_delta):
 func take_fire_damage():
 	health -= 1
 	
-	if health == 0:
+	if health <= 0:
 		get_node("Ghost").play_death()
-		timer.start()
+		death.start()
 		banished.emit()
+
+
+func take_water_damage():
+	health -= 1
+	speed /= 2
+	
+	if health <= 0:
+		get_node("Ghost").play_death()
+		death.start()
+		banished.emit()
+	else:
+		slow.start()
 
 
 func _on_timer_timeout():
@@ -111,3 +126,7 @@ func _on_menu_start_extras():
 
 func _on_game_wave_2():
 	reset()
+
+
+func _on_slowness_timeout():
+	speed *= 2
