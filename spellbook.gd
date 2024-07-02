@@ -3,12 +3,14 @@ extends Area2D
 var spell = "Fire"
 var fire
 var water
+var earth
 
 
 func _ready():
 	process_mode = Node.PROCESS_MODE_PAUSABLE
-	water = preload("res://water.tscn")
 	fire = preload("res://fire.tscn")
+	water = preload("res://water.tscn")
+	earth = preload("res://earth.tscn")
 
 
 func _process(_delta):
@@ -28,6 +30,8 @@ func shoot():
 		cast = fire.instantiate()
 	elif spell == "Water":
 		cast = water.instantiate()
+	elif spell == "Earth":
+		cast = earth.instantiate()
 	cast.global_position = shooting_point.global_position
 	cast.global_rotation = shooting_point.global_rotation
 	add_child(cast)
