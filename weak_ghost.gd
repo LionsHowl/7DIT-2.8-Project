@@ -28,9 +28,9 @@ func _physics_process(_delta):
 
 
 func take_fire_damage():
-	health -= 1
+	health -= 2
 	
-	if health <= 0:
+	if health == 0 or health == -1:
 		get_node("Ghost").play_death()
 		death.start()
 		banished.emit()
@@ -67,7 +67,7 @@ func _on_timer_timeout():
 
 
 func reset():
-	health = 2
+	health = 3
 	visible = true
 
 
