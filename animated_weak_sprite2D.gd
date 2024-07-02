@@ -7,3 +7,7 @@ func play_walk():
 
 func play_death():
 	play("Ghost_1_death")
+
+
+func play_stun():
+	play("Stun")

@@ -7,3 +7,7 @@ func play_movement():
 
 func play_dying():
 	play("Dying")
+
+
+func play_stun():
+	play("Stun")

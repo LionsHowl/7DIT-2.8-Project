@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://dhc1wtbcyfyp5"]
+[gd_scene load_steps=44 format=3 uid="uid://dhc1wtbcyfyp5"]
 
 [ext_resource type="Script" path="res://mid_ghost.gd" id="1_p0acf"]
 [ext_resource type="Texture2D" uid="uid://dmdq3h11t57af" path="res://PNG/Wraith_01/PNG Sequences/Dying/Wraith_01_Dying_000.png" id="2_ka8p6"]
@@ -29,6 +29,18 @@
 [ext_resource type="Texture2D" uid="uid://cwn0nmpfp0imy" path="res://PNG/Wraith_01/PNG Sequences/Walking/Wraith_01_Moving Forward_010.png" id="27_ocf8o"]
 [ext_resource type="Texture2D" uid="uid://c21t5ws2acma8" path="res://PNG/Wraith_01/PNG Sequences/Walking/Wraith_01_Moving Forward_011.png" id="28_33lac"]
 [ext_resource type="Script" path="res://animations.gd" id="29_43x3x"]
+[ext_resource type="Texture2D" uid="uid://dud4iq3awgynk" path="res://PNG/Wraith_01/PNG Sequences/Hurt/Wraith_01_Hurt_000.png" id="29_ef50p"]
+[ext_resource type="Texture2D" uid="uid://b83jfwt3mwy8q" path="res://PNG/Wraith_01/PNG Sequences/Hurt/Wraith_01_Hurt_001.png" id="30_hgeyl"]
+[ext_resource type="Texture2D" uid="uid://goa4w2113cf" path="res://PNG/Wraith_01/PNG Sequences/Hurt/Wraith_01_Hurt_002.png" id="31_f4t5o"]
+[ext_resource type="Texture2D" uid="uid://b5byspvtj18jk" path="res://PNG/Wraith_01/PNG Sequences/Hurt/Wraith_01_Hurt_003.png" id="32_ffdvi"]
+[ext_resource type="Texture2D" uid="uid://dtwiy1abql3hf" path="res://PNG/Wraith_01/PNG Sequences/Hurt/Wraith_01_Hurt_004.png" id="33_7bu6h"]
+[ext_resource type="Texture2D" uid="uid://cchdgwdhxlw7j" path="res://PNG/Wraith_01/PNG Sequences/Hurt/Wraith_01_Hurt_005.png" id="34_3lwhm"]
+[ext_resource type="Texture2D" uid="uid://btxw7w7jkehgq" path="res://PNG/Wraith_01/PNG Sequences/Hurt/Wraith_01_Hurt_006.png" id="35_unqyk"]
+[ext_resource type="Texture2D" uid="uid://ckbjbvhjcgqe4" path="res://PNG/Wraith_01/PNG Sequences/Hurt/Wraith_01_Hurt_007.png" id="36_uw76h"]
+[ext_resource type="Texture2D" uid="uid://b5x43bbgtde5y" path="res://PNG/Wraith_01/PNG Sequences/Hurt/Wraith_01_Hurt_008.png" id="37_h1mpc"]
+[ext_resource type="Texture2D" uid="uid://benteosmprmcn" path="res://PNG/Wraith_01/PNG Sequences/Hurt/Wraith_01_Hurt_009.png" id="38_xgny0"]
+[ext_resource type="Texture2D" uid="uid://bqnkmiwabqe8w" path="res://PNG/Wraith_01/PNG Sequences/Hurt/Wraith_01_Hurt_010.png" id="39_cgh5u"]
+[ext_resource type="Texture2D" uid="uid://0gpb3n6s7rdd" path="res://PNG/Wraith_01/PNG Sequences/Hurt/Wraith_01_Hurt_011.png" id="40_uhax8"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_54scf"]
 animations = [{
@@ -122,6 +134,47 @@ animations = [{
 "loop": true,
 "name": &"Movement",
 "speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("29_ef50p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_hgeyl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_f4t5o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_ffdvi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_7bu6h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_3lwhm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_unqyk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_uw76h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_h1mpc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_xgny0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_cgh5u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_uhax8")
+}],
+"loop": true,
+"name": &"Stun",
+"speed": 9.0
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_meshf"]
@@ -136,6 +189,7 @@ script = ExtResource("1_p0acf")
 [node name="Animations" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_54scf")
 animation = &"Movement"
+frame_progress = 0.351299
 script = ExtResource("29_43x3x")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -148,5 +202,8 @@ shape = SubResource("CapsuleShape2D_meshf")
 wait_time = 2.5
 one_shot = true
 
+[node name="Stun" type="Timer" parent="."]
+
 [connection signal="timeout" from="Death" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="Slowness" to="." method="_on_slowness_timeout"]
+[connection signal="timeout" from="Stun" to="." method="_on_stun_timeout"]

@@ -6,6 +6,7 @@ var player
 var health
 var death
 var slow
+var stun
 var speed = 75
 
 
@@ -13,6 +14,7 @@ func _ready():
 	player = get_node("/root/Game/Player")
 	death = get_node("Death")
 	slow = get_node("Slowness")
+	stun = get_node("Stun")
 
 
 func _physics_process(_delta):
@@ -38,12 +40,25 @@ func take_water_damage():
 	health -= 1
 	speed /= 2
 	
-	if health <= 0:
+	if health == 0:
 		get_node("Ghost").play_death()
 		death.start()
 		banished.emit()
 	else:
 		slow.start()
+
+
+func take_earth_damage():
+	health -= 1
+	speed = 0
+	
+	if health == 0:
+		get_node("Ghost").play_death()
+		death.start()
+		banished.emit()
+	else:
+		get_node("Ghost").play_stun()
+		stun.start()
 
 
 func _on_timer_timeout():
@@ -130,3 +145,7 @@ func _on_game_wave_2():
 
 func _on_slowness_timeout():
 	speed *= 2
+
+
+func _on_stun_timeout():
+	speed = 75
