@@ -4,6 +4,7 @@ var spell = "Fire"
 var fire
 var water
 var earth
+var air
 
 
 func _ready():
@@ -11,6 +12,7 @@ func _ready():
 	fire = preload("res://fire.tscn")
 	water = preload("res://water.tscn")
 	earth = preload("res://earth.tscn")
+	air = preload("res://air.tscn")
 
 
 func _process(_delta):
@@ -20,6 +22,8 @@ func _process(_delta):
 		spell = "Water"
 	elif  Input.is_action_just_pressed("earth"):
 		spell = "Earth"
+	elif Input.is_action_just_pressed("air"):
+		spell = "Air"
 
 
 func shoot():
@@ -32,6 +36,9 @@ func shoot():
 		cast = water.instantiate()
 	elif spell == "Earth":
 		cast = earth.instantiate()
+		#print("a", cast.global_position)
+	elif spell == "Air":
+		cast = air.instantiate()
 	cast.global_position = shooting_point.global_position
 	cast.global_rotation = shooting_point.global_rotation
 	add_child(cast)

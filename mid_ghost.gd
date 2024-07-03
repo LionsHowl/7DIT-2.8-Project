@@ -61,6 +61,15 @@ func take_earth_damage():
 		stun.start()
 
 
+func take_air_damage():
+	health -= 1
+	
+	if health <= 0:
+		get_node("Animations").play_dying()
+		death.start()
+		banished.emit()
+
+
 func _on_timer_timeout():
 	visible = false
 	position = Vector2(1250, 625)

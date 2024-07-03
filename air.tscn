@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://ddc4smobgxqel"]
+
+[ext_resource type="Script" path="res://air.gd" id="1_tpc7h"]
+[ext_resource type="Texture2D" uid="uid://c32jhtrwmiyju" path="res://freepik-export-202407030005537M3s.png" id="2_vk8us"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_dw2k4"]
+radius = 101.0
+height = 513.333
+
+[node name="Air" type="Area2D"]
+top_level = true
+scale = Vector2(0.15, 0.15)
+collision_layer = 0
+collision_mask = 63
+script = ExtResource("1_tpc7h")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_vk8us")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-13.3333, -6.66667)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_dw2k4")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
