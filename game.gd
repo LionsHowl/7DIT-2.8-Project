@@ -20,9 +20,9 @@ func _on_ghost_banished():
 	mob_banished += 1
 	if wave == 1 and mob_banished == 6:
 		wave = 2
+		mob_banished = 0
 		
 		wave_2.emit()
-		mob_banished = 0
 
 
 func _process(_delta):
