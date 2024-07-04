@@ -1,14 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://bwqv361igq7qu"]
+[gd_scene load_steps=5 format=3 uid="uid://bwqv361igq7qu"]
 
 [ext_resource type="Script" path="res://spellbook.gd" id="1_tn0ru"]
 [ext_resource type="Texture2D" uid="uid://dp4f4l140uepv" path="res://PNG/without background/37.png" id="1_y8upm"]
 [ext_resource type="Script" path="res://pivot.gd" id="2_apwps"]
-[ext_resource type="PackedScene" uid="uid://b44xcvcq0hwg5" path="res://fire.tscn" id="3_dg1ec"]
-[ext_resource type="PackedScene" uid="uid://ccrcnqq02v6bu" path="res://water.tscn" id="4_lai83"]
-[ext_resource type="PackedScene" uid="uid://bcx2qfmbqytvm" path="res://earth.tscn" id="6_c3up5"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_t2jpf"]
-radius = 149.013
+radius = 141.014
 
 [node name="Spellbook" type="Area2D"]
 collision_layer = 0
@@ -32,17 +29,6 @@ texture = ExtResource("1_y8upm")
 
 [node name="Shooting Point" type="Marker2D" parent="Pivot/Spellbook"]
 position = Vector2(-153.584, 94.5887)
-
-[node name="Fire" parent="Pivot/Spellbook/Shooting Point" instance=ExtResource("3_dg1ec")]
-visible = false
-scale = Vector2(0.125, 0.125)
-
-[node name="Water" parent="Pivot/Spellbook/Shooting Point" instance=ExtResource("4_lai83")]
-visible = false
-scale = Vector2(0.900524, 0.887428)
-
-[node name="Earth" parent="Pivot/Spellbook/Shooting Point" instance=ExtResource("6_c3up5")]
-visible = false
 
 [node name="Timer" type="Timer" parent="."]
 autostart = true
