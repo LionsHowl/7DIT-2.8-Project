@@ -36,7 +36,6 @@ func shoot():
 		cast = water.instantiate()
 	elif spell == "Earth":
 		cast = earth.instantiate()
-		#print("a", cast.global_position)
 	elif spell == "Air":
 		cast = air.instantiate()
 	cast.global_position = shooting_point.global_position
