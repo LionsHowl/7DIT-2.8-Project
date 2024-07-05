@@ -1,5 +1,12 @@
 
-###################################################################################################
+#########################################################################################################################################################################################
+
+	Dead Font Walking (Title and Button Font)
+	by Andrew McCluskey
+
+	The font was free to use for all purposes and can be found on https://www.font-generator.com/fonts/DeadFontWalking/
+
+#########################################################################################################################################################################################
 
 	Roguelike pack (Background)
 	by Kenney Vleugels for Kenney (www.kenney.nl)
@@ -18,11 +25,39 @@
 	Donate:   http://donate.kenney.nl/
 	Request:  http://request.kenney.nl/
 
+#########################################################################################################################################################################################
 
-###################################################################################################
+	Magic power strike effects set isolated on dark background Vector cartoon illustration of ice pieces white cloud of steam laundry bubbles clear blue water impact arrow trails  
+        freshness symbols (Air Spell)
+	by upklyak
+
+	Was free to use under copyright laws as long as long as I follow the terms of use as long as I:
+	1.   Does not involve collective use;
+	2.   The Freepik Content is not used in a manner that suggests an association or endorsement of any kind by the Company or the Website;
+	3.   The Freepik Content or any derivative work is not used or included (in whole or in part) in a database, archive or in any other media/stock product, collection, set of  
+ 	     clips, or library, for distribution or resale or used in any other way that could prevent or limit future visits or downloads from the Website;
+	4.   Does not resell, assign, transfer or sublicense the Freepik Content or any derived work from the Freepik Content;
+	5.   Does not use the Freepik Content in printed or electronic items (e.g. t-shirts, cups, postcards, birthday or greeting cards, invitations, calendars, web models or  
+ 	     electronic devices, apps, NFTs, videogames, advertising spots, audiovisual animations) aimed to be resold, in which the Freepik Content is the main element (because of  
+ 	     size, relevance or any other cause, in case of doubt about whether the content is main element, it shall be deemed that the content is main element);
+	6.   Does not use the Freepik Content (totally or partially) in any trademark, or part of the same, which may be used by any other means to guarantee or to imply a guaranty of  
+ 	     any product and/or service, unless the Freepik Content used in such cases is modified in such a way as to be a new and different content not confusingly similar with the  
+ 	     original Freepik Content or implies a use of the Freepik Content as a template or test, and not as a final item or material;
+	7.   Does not use the Freepik Content (including any caption information, title, keywords or other metadata associated with the Freepik Content) for any machine learning and/or 
+ 	     artificial intelligence purposes, or for any technologies designed or intended for the identification of natural persons.
+	8.   Does not make any use of the Freepik Content which might be considered defamatory, libellous, obscene, immoral or illegal, including, without limitation, using it in a way 
+ 	     that places any person appearing in the Freepik Content in a negative light or depicts them in a way that they may find offensive such as the use in pornography, 
+ 	     advertisements for escort or similar services, political endorsements, birth control products, and;
+	9.   Does not make any use of the Freepik Content to slander, libel or to vilify a person, race, sex, culture, sexual orientation, religion, country, region, town, village or 
+ 	     any other place, or any other human group.
+
+	Since I'm not planning on selling this to anyone number 5 doesn't matter. 
+	If you want to know more about the licence go to https://www.freepik.com/legal/terms-of-use#nav-freepik-license
+
+#########################################################################################################################################################################################
 
 	All over assets were sourced from CraftPix and are free to use under copyright laws.
 
 	License: https://craftpix.net/file-licenses/
 
-###################################################################################################
+#########################################################################################################################################################################################
