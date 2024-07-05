@@ -38,10 +38,10 @@ texture = ExtResource("2_7hvyc")
 [node name="Instructions" type="Label" parent="ColorRect"]
 layout_mode = 0
 offset_left = 279.0
-offset_top = 171.0
+offset_top = 165.0
 offset_right = 874.0
-offset_bottom = 510.0
-theme_override_font_sizes/font_size = 25
+offset_bottom = 512.0
+theme_override_font_sizes/font_size = 23
 text = "W or up arrow - Move up
 A or left arrow - Move right
 S or down arrow - Move down
@@ -49,6 +49,7 @@ D or right arrow - Move Right
 Mouse - Aim the Spellbook
 1, Z, M - Fire Spell
 2, X, Comma - Water Spell
+3, C, Fullstop - Earth spell
 4, V, / - Air Spell
 esc or CMD/CTRL + Q - Quit game"
 
