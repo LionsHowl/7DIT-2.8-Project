@@ -47,10 +47,10 @@ A or left arrow - Move right
 S or down arrow - Move down
 D or right arrow - Move Right
 Mouse - Aim the Spellbook
-1, Z, M - Fire Spell
-2, X, Comma - Water Spell
-3, C, Fullstop - Earth spell
-4, V, / - Air Spell
+1, Z, or M - Fire Spell
+2, X, or Comma - Water Spell
+3, C, or Fullstop - Earth spell
+4, V, or / - Air Spell
 esc or CMD/CTRL + Q - Quit game"
 
 [node name="Menu Button" type="Button" parent="ColorRect"]
