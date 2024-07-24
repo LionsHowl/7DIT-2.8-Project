@@ -22,8 +22,6 @@ func _physics_process(_delta):
 	
 	if health > 0:
 		velocity = direction * speed
-		
-		get_node("Ghost").play_walk()
 		move_and_slide()
 
 
@@ -78,6 +76,8 @@ func _on_timer_timeout():
 func reset():
 	health = 3
 	visible = true
+	
+	get_node("Ghost").play_walk()
 
 
 func _on_menu_start():
