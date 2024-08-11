@@ -8,6 +8,7 @@ var health
 var death
 var slow
 var stun
+var status
 
 
 func _ready():
@@ -15,6 +16,8 @@ func _ready():
 	death = get_node("Death")
 	slow = get_node("Slowness")
 	stun = get_node("Stun")
+	status = "Alive"
+	get_node("Animations").play_movement()
 
 
 func _physics_process(_delta):
@@ -22,8 +25,6 @@ func _physics_process(_delta):
 	
 	if health > 0:
 		velocity = direction * speed
-		
-		get_node("Animations").play_movement()
 		move_and_slide()
 
 
@@ -34,6 +35,7 @@ func take_fire_damage():
 		get_node("Animations").play_dying()
 		death.start()
 		banished.emit()
+		status == "Dead"
 
 
 func take_water_damage():
@@ -44,6 +46,7 @@ func take_water_damage():
 		get_node("Animations").play_dying()
 		death.start()
 		banished.emit()
+		status == "Dead"
 	else:
 		slow.start()
 
@@ -56,6 +59,7 @@ func take_earth_damage():
 		get_node("Animations").play_dying()
 		death.start()
 		banished.emit()
+		status == "Dead"
 	else:
 		get_node("Animations").play_stun()
 		stun.start()
@@ -68,6 +72,7 @@ func take_air_damage():
 		get_node("Animations").play_dying()
 		death.start()
 		banished.emit()
+		status == "Dead"
 
 
 func _on_timer_timeout():

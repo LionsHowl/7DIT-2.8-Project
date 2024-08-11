@@ -8,6 +8,7 @@ var death
 var slow
 var stun
 var speed = 75
+var status
 
 
 func _ready():
@@ -15,6 +16,7 @@ func _ready():
 	death = get_node("Death")
 	slow = get_node("Slowness")
 	stun = get_node("Stun")
+	status = "Alive"
 
 
 func _physics_process(_delta):
@@ -50,11 +52,12 @@ func take_earth_damage():
 	health -= 1
 	speed = 0
 	
-	if health == 0:
+	if health <= 0 and status == "Alive":
 		get_node("Ghost").play_death()
 		death.start()
 		banished.emit()
-	else:
+		status = "Dead"
+	elif status == "Alive":
 		get_node("Ghost").play_stun()
 		stun.start()
 

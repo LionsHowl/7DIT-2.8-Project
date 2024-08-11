@@ -206,3 +206,4 @@ one_shot = true
 [connection signal="timeout" from="Death" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="Slowness" to="." method="_on_slowness_timeout"]
 [connection signal="timeout" from="Stun" to="." method="_on_stun_timeout"]
+[connection signal="timeout" from="Stun" to="Animations" method="_on_stun_timeout"]
