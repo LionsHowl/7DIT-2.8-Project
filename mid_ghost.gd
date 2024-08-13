@@ -35,7 +35,7 @@ func take_fire_damage():
 		get_node("Animations").play_dying()
 		death.start()
 		banished.emit()
-		status == "Dead"
+		status = "Dead"
 
 
 func take_water_damage():
@@ -46,7 +46,7 @@ func take_water_damage():
 		get_node("Animations").play_dying()
 		death.start()
 		banished.emit()
-		status == "Dead"
+		status = "Dead"
 	else:
 		slow.start()
 
@@ -59,7 +59,7 @@ func take_earth_damage():
 		get_node("Animations").play_dying()
 		death.start()
 		banished.emit()
-		status == "Dead"
+		status = "Dead"
 	else:
 		get_node("Animations").play_stun()
 		stun.start()
@@ -72,7 +72,7 @@ func take_air_damage():
 		get_node("Animations").play_dying()
 		death.start()
 		banished.emit()
-		status == "Dead"
+		status = "Dead"
 
 
 func _on_timer_timeout():
