@@ -8,7 +8,6 @@ var air
 
 
 func _ready():
-	process_mode = Node.PROCESS_MODE_PAUSABLE
 	fire = preload("res://fire.tscn")
 	water = preload("res://water.tscn")
 	earth = preload("res://earth.tscn")

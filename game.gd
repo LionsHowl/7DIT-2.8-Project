@@ -12,7 +12,6 @@ func _enter_tree():
 
 
 func _on_menu_start():
-	get_tree().paused = false
 	wave = 1
 	mob_banished = 0
 	
@@ -35,5 +34,6 @@ func _process(_delta):
 
 func _on_fade_headings_animation_finished(anim_name):
 	if anim_name == "Wave 1":
-		print(1)
+		get_tree().paused = false
+		
 		start.emit()

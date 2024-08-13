@@ -10,7 +10,6 @@ var facing
 
 
 func _ready():
-	process_mode = Node.PROCESS_MODE_ALWAYS
 	end = get_node("/root/Game/Game Over")
 
 
