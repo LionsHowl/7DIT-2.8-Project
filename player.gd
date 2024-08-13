@@ -63,7 +63,7 @@ func _on_timer_timeout():
 	end.visible = true
 
 
-func _on_menu_start():
+func _on_game_start():
 	status = "Alive"
 	position = Vector2(560, 245)
 	visible = true

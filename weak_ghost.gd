@@ -3,12 +3,12 @@ extends CharacterBody2D
 signal banished
 
 var player
-var health
+var health = 0
 var death
 var slow
 var stun
 var speed = 75
-var status
+var status = "Dead"
 
 
 func _ready():
@@ -16,7 +16,6 @@ func _ready():
 	death = get_node("Death")
 	slow = get_node("Slowness")
 	stun = get_node("Stun")
-	status = "Alive"
 
 
 func _physics_process(_delta):
@@ -79,36 +78,37 @@ func _on_timer_timeout():
 func reset():
 	health = 3
 	visible = true
+	status = "Alive"
 	
 	get_node("Ghost").play_walk()
 
 
-func _on_menu_start():
+func _on_game_start():
 	position = Vector2(-20, 0)
 	reset()
 
 
-func _on_menu_start2():
+func _on_game_start2():
 	position = Vector2(35, -40)
 	reset()
 
 
-func _on_menu_start3():
+func _on_game_start3():
 	position = Vector2(-30, 75)
 	reset()
 
 
-func _on_menu_start4():
+func _on_game_start4():
 	position = Vector2(1165, -35)
 	reset()
 
 
-func _on_menu_start5():
+func _on_game_start5():
 	position = Vector2(1200, 680)
 	reset()
 
 
-func _on_menu_start6():
+func _on_game_start6():
 	position = Vector2(-45, 675)
 	reset()
 
