@@ -16,9 +16,9 @@
 [ext_resource type="Texture2D" uid="uid://dd0bableu52y3" path="res://Text/Endless.png" id="13_g2u5w"]
 [ext_resource type="Texture2D" uid="uid://bp2d7aeqnkvlp" path="res://Text/Survive.png" id="14_xpyk4"]
 
-[sub_resource type="Animation" id="Animation_ri2fp"]
-resource_name = "Wave 1"
-length = 3.0
+[sub_resource type="Animation" id="Animation_5jbk5"]
+resource_name = "Endless"
+length = 5.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -26,10 +26,10 @@ tracks/0/path = NodePath("Fade Headings/ColorRect:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 2, 3),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 1, 4.5, 5.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -38,7 +38,7 @@ tracks/1/path = NodePath("Fade Headings/ColorRect:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 3),
+"times": PackedFloat32Array(0, 5.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [true, false]
@@ -46,11 +46,11 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Fade Headings/ColorRect/Wave 1:modulate")
+tracks/2/path = NodePath("Fade Headings/ColorRect/Endless:modulate")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 1, 2, 3),
+"times": PackedFloat32Array(1, 2, 4.5, 5.5),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
@@ -58,11 +58,35 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Fade Headings/ColorRect/Wave 1:visible")
+tracks/3/path = NodePath("Fade Headings/ColorRect/Endless:visible")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0, 3),
+"times": PackedFloat32Array(1, 5.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Fade Headings/ColorRect/Survive:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(1.5, 2.5, 4.5, 5.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Fade Headings/ColorRect/Survive:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(1.5, 5.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [true, false]
@@ -215,6 +239,58 @@ tracks/11/keys = {
 "values": [false]
 }
 
+[sub_resource type="Animation" id="Animation_ri2fp"]
+resource_name = "Wave 1"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Fade Headings/ColorRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2, 3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Fade Headings/ColorRect:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Fade Headings/ColorRect/Wave 1:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1, 2, 3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Fade Headings/ColorRect/Wave 1:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
 [sub_resource type="Animation" id="Animation_pt6cb"]
 resource_name = "Wave 2"
 length = 4.0
@@ -314,82 +390,6 @@ tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
 "times": PackedFloat32Array(1, 4),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
-
-[sub_resource type="Animation" id="Animation_5jbk5"]
-resource_name = "Endless"
-length = 5.5
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Fade Headings/ColorRect:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1, 4.5, 5.5),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Fade Headings/ColorRect:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 5.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Fade Headings/ColorRect/Endless:modulate")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(1, 2, 4.5, 5.5),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Fade Headings/ColorRect/Endless:visible")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(1, 5.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("Fade Headings/ColorRect/Survive:modulate")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(1.5, 2.5, 4.5, 5.5),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("Fade Headings/ColorRect/Survive:visible")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(1.5, 5.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [true, false]
@@ -664,26 +664,26 @@ metadata/_edit_lock_ = true
 [connection signal="menu" from="Game Over" to="Wave 1 Mobs/Weak Ghost4" method="_on_game_over_menu"]
 [connection signal="menu" from="Game Over" to="Wave 1 Mobs/Weak Ghost5" method="_on_game_over_menu"]
 [connection signal="menu" from="Game Over" to="Wave 1 Mobs/Weak Ghost6" method="_on_game_over_menu"]
-[connection signal="menu" from="Game Over" to="Wave 2 Mobs/Weak Ghost7" method="_on_game_over_menu"]
 [connection signal="menu" from="Game Over" to="Wave 2 Mobs/Weak Ghost7" method="_on_game_over_menu7"]
-[connection signal="menu" from="Game Over" to="Wave 2 Mobs/Weak Ghost8" method="_on_game_over_menu"]
+[connection signal="menu" from="Game Over" to="Wave 2 Mobs/Weak Ghost7" method="_on_game_over_menu"]
 [connection signal="menu" from="Game Over" to="Wave 2 Mobs/Weak Ghost8" method="_on_game_over_menu8"]
-[connection signal="menu" from="Game Over" to="Wave 2 Mobs/Weak Ghost9" method="_on_game_over_menu"]
+[connection signal="menu" from="Game Over" to="Wave 2 Mobs/Weak Ghost8" method="_on_game_over_menu"]
 [connection signal="menu" from="Game Over" to="Wave 2 Mobs/Weak Ghost9" method="_on_game_over_menu9"]
-[connection signal="menu" from="Game Over" to="Wave 2 Mobs/Weak Ghost10" method="_on_game_over_menu"]
+[connection signal="menu" from="Game Over" to="Wave 2 Mobs/Weak Ghost9" method="_on_game_over_menu"]
 [connection signal="menu" from="Game Over" to="Wave 2 Mobs/Weak Ghost10" method="_on_game_over_menu10"]
-[connection signal="menu" from="Game Over" to="Wave 2 Mobs/Weak Ghost11" method="_on_game_over_menu"]
+[connection signal="menu" from="Game Over" to="Wave 2 Mobs/Weak Ghost10" method="_on_game_over_menu"]
 [connection signal="menu" from="Game Over" to="Wave 2 Mobs/Weak Ghost11" method="_on_game_over_menu11"]
-[connection signal="menu" from="Game Over" to="Wave 2 Mobs/Weak Ghost12" method="_on_game_over_menu"]
+[connection signal="menu" from="Game Over" to="Wave 2 Mobs/Weak Ghost11" method="_on_game_over_menu"]
 [connection signal="menu" from="Game Over" to="Wave 2 Mobs/Weak Ghost12" method="_on_game_over_menu12"]
-[connection signal="menu" from="Game Over" to="Wave 2 Mobs/Mid Ghost" method="_on_game_over_menu"]
+[connection signal="menu" from="Game Over" to="Wave 2 Mobs/Weak Ghost12" method="_on_game_over_menu"]
 [connection signal="menu" from="Game Over" to="Wave 2 Mobs/Mid Ghost" method="_on_game_over_menu1"]
+[connection signal="menu" from="Game Over" to="Wave 2 Mobs/Mid Ghost" method="_on_game_over_menu"]
 [connection signal="menu" from="Game Over" to="Wave 2 Mobs/Mid Ghost2" method="_on_game_over_menu2"]
 [connection signal="menu" from="Game Over" to="Wave 2 Mobs/Mid Ghost2" method="_on_game_over_menu"]
 [connection signal="menu" from="Game Over" to="Wave 2 Mobs/Mid Ghost3" method="_on_game_over_menu3"]
 [connection signal="menu" from="Game Over" to="Wave 2 Mobs/Mid Ghost3" method="_on_game_over_menu"]
-[connection signal="menu" from="Game Over" to="Wave 2 Mobs/Mid Ghost4" method="_on_game_over_menu"]
 [connection signal="menu" from="Game Over" to="Wave 2 Mobs/Mid Ghost4" method="_on_game_over_menu4"]
+[connection signal="menu" from="Game Over" to="Wave 2 Mobs/Mid Ghost4" method="_on_game_over_menu"]
 [connection signal="menu" from="Game Over" to="Player" method="_on_game_over_menu"]
 [connection signal="menu" from="Game Over" to="Menu" method="_on_game_over_menu"]
 [connection signal="instructions" from="Menu" to="Menu/Instuctions" method="_on_menu_instructions"]
