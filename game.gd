@@ -23,8 +23,15 @@ func _on_ghost_banished():
 	if wave == 1 and mob_banished == 6:
 		wave = 2
 		mob_banished = 0
+		get_tree().paused = true
 		
-		wave_2.emit()
+		%"Fade Headings".two()
+	elif wave == 2 and mob_banished == 10:
+		wave = 3
+		mob_banished = 0
+		get_tree().paused = true
+		
+		%"Fade Headings".three()
 
 
 func _process(_delta):
@@ -33,7 +40,8 @@ func _process(_delta):
 
 
 func _on_fade_headings_animation_finished(anim_name):
+	get_tree().paused = false
 	if anim_name == "Wave 1":
-		get_tree().paused = false
-		
 		start.emit()
+	elif anim_name == "Wave 2":
+		wave_2.emit()
