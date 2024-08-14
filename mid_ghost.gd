@@ -28,14 +28,21 @@ func _physics_process(_delta):
 		move_and_slide()
 
 
+func dying():
+	status = "Dead"
+	
+	get_node("Animations").play_dying()
+	death.start()
+	banished.emit()
+	
+
+
+
 func take_fire_damage():
 	health -= 2
 	
 	if health == 0 or health == -1:
-		get_node("Animations").play_dying()
-		death.start()
-		banished.emit()
-		status = "Dead"
+		dying()
 
 
 func take_water_damage():
@@ -43,10 +50,7 @@ func take_water_damage():
 	speed /= 2
 	
 	if health == 0:
-		get_node("Animations").play_dying()
-		death.start()
-		banished.emit()
-		status = "Dead"
+		dying()
 	else:
 		slow.start()
 
@@ -56,10 +60,7 @@ func take_earth_damage():
 	speed = 0
 	
 	if health == 0:
-		get_node("Animations").play_dying()
-		death.start()
-		banished.emit()
-		status = "Dead"
+		dying()
 	else:
 		get_node("Animations").play_stun()
 		stun.start()
@@ -69,10 +70,7 @@ func take_air_damage():
 	health -= 1
 	
 	if health <= 0:
-		get_node("Animations").play_dying()
-		death.start()
-		banished.emit()
-		status = "Dead"
+		dying()
 
 
 func _on_timer_timeout():
@@ -87,21 +85,21 @@ func reset():
 
 func _on_game_over_menu():
 	visible = false
+
+
+func _on_game_over_menu1():
 	position = Vector2(-20, 25)
 
 
 func _on_game_over_menu2():
-	visible = false
 	position = Vector2(1180, 100)
 
 
 func _on_game_over_menu3():
-	visible = false
 	position = Vector2(1135, 700)
 
 
 func _on_game_over_menu4():
-	visible = false
 	position = Vector2(25, 685)
 
 
@@ -119,3 +117,4 @@ func _on_slowness_timeout():
 
 func _on_stun_timeout():
 	speed = 100
+

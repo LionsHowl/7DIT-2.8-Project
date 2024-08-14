@@ -26,13 +26,19 @@ func _physics_process(_delta):
 		move_and_slide()
 
 
+func dying():
+	status = "Dead"
+	
+	get_node("Ghost").play_death()
+	death.start()
+	banished.emit()
+
+
 func take_fire_damage():
 	health -= 2
 	
 	if health == 0 or health == -1:
-		get_node("Ghost").play_death()
-		death.start()
-		banished.emit()
+		dying()
 
 
 func take_water_damage():
@@ -40,9 +46,7 @@ func take_water_damage():
 	speed /= 2
 	
 	if health == 0:
-		get_node("Ghost").play_death()
-		death.start()
-		banished.emit()
+		dying()
 	else:
 		slow.start()
 
@@ -52,10 +56,7 @@ func take_earth_damage():
 	speed = 0
 	
 	if health <= 0 and status == "Alive":
-		get_node("Ghost").play_death()
-		death.start()
-		banished.emit()
-		status = "Dead"
+		dying()
 	elif status == "Alive":
 		get_node("Ghost").play_stun()
 		stun.start()
@@ -65,9 +66,7 @@ func take_air_damage():
 	health -= 1
 	
 	if health == 0:
-		get_node("Ghost").play_death()
-		death.start()
-		banished.emit()
+		dying()
 
 
 func _on_timer_timeout():
@@ -84,33 +83,30 @@ func reset():
 
 
 func _on_game_start():
-	position = Vector2(-20, 0)
 	reset()
+
+func _on_game_start1():
+	position = Vector2(-20, 0)
 
 
 func _on_game_start2():
 	position = Vector2(35, -40)
-	reset()
 
 
 func _on_game_start3():
 	position = Vector2(-30, 75)
-	reset()
 
 
 func _on_game_start4():
 	position = Vector2(1165, -35)
-	reset()
 
 
 func _on_game_start5():
 	position = Vector2(1200, 680)
-	reset()
 
 
 func _on_game_start6():
 	position = Vector2(-45, 675)
-	reset()
 
 
 func _on_game_over_menu():
@@ -118,32 +114,26 @@ func _on_game_over_menu():
 
 
 func _on_game_over_menu7():
-	visible = false
 	position = Vector2(-55, -30)
 
 
 func _on_game_over_menu8():
-	visible = false
 	position = Vector2(35, -40)
 
 
 func _on_game_over_menu9():
-	visible = false
 	position = Vector2(-35, 85)
 
 
 func _on_game_over_menu10():
-	visible = false
 	position = Vector2(1165, -35)
 
 
 func _on_game_over_menu11():
-	visible = false
 	position = Vector2(1200, 680)
 
 
 func _on_game_over_menu12():
-	visible = false
 	position = Vector2(-45, 675)
 
 
