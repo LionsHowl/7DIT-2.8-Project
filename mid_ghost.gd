@@ -2,13 +2,14 @@ extends CharacterBody2D
 
 signal banished
 
-var speed = 100
 var player
 var health
 var death
 var slow
 var stun
 var status
+var direction
+var speed = 100
 
 
 func _ready():
@@ -21,7 +22,7 @@ func _ready():
 
 
 func _physics_process(_delta):
-	var direction = global_position.direction_to(player.global_position)
+	direction = global_position.direction_to(player.global_position)
 	
 	if health > 0:
 		velocity = direction * speed

@@ -1,10 +1,12 @@
 extends Area2D
 
-var spell = "Fire"
 var fire
 var water
 var earth
 var air
+var cast
+var shooting_point
+var spell = "Fire"
 
 
 func _ready():
@@ -26,8 +28,7 @@ func _process(_delta):
 
 
 func shoot():
-	var shooting_point = get_node("Pivot/Spellbook/Shooting Point")
-	var cast
+	shooting_point = get_node("Pivot/Spellbook/Shooting Point")
 	
 	if spell == "Fire":
 		cast = fire.instantiate()

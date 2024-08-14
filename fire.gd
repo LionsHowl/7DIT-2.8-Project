@@ -1,10 +1,11 @@
 extends Area2D
 
+var direction
 var travel_distance = 0
 
 
 func _physics_process(delta):
-	var direction = Vector2.LEFT.rotated(rotation)
+	direction = Vector2.LEFT.rotated(rotation)
 	position += direction * 750 * delta
 	travel_distance += 750 * delta
 	
