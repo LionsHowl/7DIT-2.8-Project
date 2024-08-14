@@ -518,7 +518,7 @@ script = ExtResource("1_a5mll")
 unique_name_in_owner = true
 scale = Vector2(0.165556, 0.165556)
 sprite_frames = SubResource("SpriteFrames_yb7w0")
-animation = &"Idle"
+animation = &"Idle Left"
 script = ExtResource("43_xv6v0")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
