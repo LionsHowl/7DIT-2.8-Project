@@ -563,7 +563,6 @@ process_mode = 2
 visible = false
 
 [node name="Menu" parent="." instance=ExtResource("6_74tg7")]
-process_mode = 2
 
 [node name="Instuctions" parent="Menu" instance=ExtResource("7_x2by6")]
 visible = false
