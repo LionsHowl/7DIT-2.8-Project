@@ -7,10 +7,18 @@ var health
 var end
 var timer
 var facing
+var stylebox_flat
+var overlaping_weak_mobs
 
 
 func _ready():
+	process_mode = Node.PROCESS_MODE_PAUSABLE
 	end = get_node("/root/Game/Game Over")
+	stylebox_flat = StyleBoxFlat.new()
+	stylebox_flat.corner_radius_top_left = 5
+	stylebox_flat.corner_radius_top_right = 5
+	stylebox_flat.corner_radius_bottom_left = 5
+	stylebox_flat.corner_radius_bottom_right = 5
 
 
 func _physics_process(delta):
@@ -43,9 +51,16 @@ func _physics_process(delta):
 		if health <= 0:
 			dead.emit()
 			status = "dead"
+		
+		if health <= 25:
+			stylebox_flat.bg_color = Color(255, 0, 0)
+		else:
+			stylebox_flat.bg_color = Color("#43ff00")
+		%"Health Bar".add_theme_stylebox_override("fill", stylebox_flat)
 
 
 func _on_dead():
+	process_mode = Node.PROCESS_MODE_ALWAYS
 	timer = get_node("Timer")
 	%"Health Bar".visible = false
 	get_node("Spellbook").visible = false
@@ -60,6 +75,7 @@ func _on_dead():
 
 func _on_timer_timeout():
 	end.visible = true
+	process_mode = Node.PROCESS_MODE_PAUSABLE
 
 
 func _on_game_start():
