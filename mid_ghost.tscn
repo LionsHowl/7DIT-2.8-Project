@@ -196,12 +196,14 @@ position = Vector2(-23, -44)
 shape = SubResource("CapsuleShape2D_meshf")
 
 [node name="Death" type="Timer" parent="."]
+one_shot = true
 
 [node name="Slowness" type="Timer" parent="."]
 wait_time = 2.5
 one_shot = true
 
 [node name="Stun" type="Timer" parent="."]
+one_shot = true
 
 [connection signal="timeout" from="Death" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="Slowness" to="." method="_on_slowness_timeout"]
