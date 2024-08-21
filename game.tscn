@@ -3920,7 +3920,6 @@ tile_set = SubResource("TileSet_ww7ig")
 process_mode = 4
 
 [node name="Weak Ghost" parent="Wave 1 Mobs" instance=ExtResource("2_fb58j")]
-process_mode = 1
 visible = false
 position = Vector2(-20, 2.08165e-12)
 scale = Vector2(0.191929, 0.191929)
@@ -3928,7 +3927,6 @@ collision_layer = 1
 collision_mask = 129
 
 [node name="Weak Ghost2" parent="Wave 1 Mobs" instance=ExtResource("2_fb58j")]
-process_mode = 1
 visible = false
 position = Vector2(35, -40)
 scale = Vector2(0.191929, 0.191929)
@@ -3936,7 +3934,6 @@ collision_layer = 1
 collision_mask = 129
 
 [node name="Weak Ghost3" parent="Wave 1 Mobs" instance=ExtResource("2_fb58j")]
-process_mode = 1
 visible = false
 position = Vector2(-20, 75)
 scale = Vector2(0.191929, 0.191929)
@@ -3944,7 +3941,6 @@ collision_layer = 1
 collision_mask = 129
 
 [node name="Weak Ghost4" parent="Wave 1 Mobs" instance=ExtResource("2_fb58j")]
-process_mode = 1
 visible = false
 position = Vector2(1165, -35)
 scale = Vector2(0.191929, 0.191929)
@@ -3952,7 +3948,6 @@ collision_layer = 1
 collision_mask = 129
 
 [node name="Weak Ghost5" parent="Wave 1 Mobs" instance=ExtResource("2_fb58j")]
-process_mode = 1
 visible = false
 position = Vector2(1200, 680)
 scale = Vector2(0.191929, 0.191929)
@@ -3960,7 +3955,6 @@ collision_layer = 1
 collision_mask = 129
 
 [node name="Weak Ghost6" parent="Wave 1 Mobs" instance=ExtResource("2_fb58j")]
-process_mode = 1
 visible = false
 position = Vector2(-45, 675)
 scale = Vector2(0.191929, 0.191929)
@@ -3971,7 +3965,6 @@ collision_mask = 129
 process_mode = 4
 
 [node name="Weak Ghost7" parent="Wave 2 Mobs" instance=ExtResource("2_fb58j")]
-process_mode = 1
 visible = false
 position = Vector2(-55, -30)
 scale = Vector2(0.191929, 0.191929)
@@ -3979,7 +3972,6 @@ collision_layer = 2
 collision_mask = 134
 
 [node name="Weak Ghost8" parent="Wave 2 Mobs" instance=ExtResource("2_fb58j")]
-process_mode = 1
 visible = false
 position = Vector2(35, -40)
 scale = Vector2(0.191929, 0.191929)
@@ -3987,7 +3979,6 @@ collision_layer = 2
 collision_mask = 134
 
 [node name="Weak Ghost9" parent="Wave 2 Mobs" instance=ExtResource("2_fb58j")]
-process_mode = 1
 visible = false
 position = Vector2(-35, 85)
 scale = Vector2(0.191929, 0.191929)
@@ -3995,7 +3986,6 @@ collision_layer = 2
 collision_mask = 134
 
 [node name="Weak Ghost10" parent="Wave 2 Mobs" instance=ExtResource("2_fb58j")]
-process_mode = 1
 visible = false
 position = Vector2(1165, -35)
 scale = Vector2(0.191929, 0.191929)
@@ -4003,7 +3993,6 @@ collision_layer = 2
 collision_mask = 134
 
 [node name="Weak Ghost11" parent="Wave 2 Mobs" instance=ExtResource("2_fb58j")]
-process_mode = 1
 visible = false
 position = Vector2(1200, 680)
 scale = Vector2(0.191929, 0.191929)
@@ -4011,7 +4000,6 @@ collision_layer = 2
 collision_mask = 134
 
 [node name="Weak Ghost12" parent="Wave 2 Mobs" instance=ExtResource("2_fb58j")]
-process_mode = 1
 visible = false
 position = Vector2(-45, 675)
 scale = Vector2(0.191929, 0.191929)
@@ -4019,7 +4007,6 @@ collision_layer = 2
 collision_mask = 134
 
 [node name="Mid Ghost" parent="Wave 2 Mobs" instance=ExtResource("4_s7aa7")]
-process_mode = 1
 visible = false
 position = Vector2(-20, 25)
 scale = Vector2(0.192, 0.192)
@@ -4027,7 +4014,6 @@ collision_layer = 4
 collision_mask = 134
 
 [node name="Mid Ghost2" parent="Wave 2 Mobs" instance=ExtResource("4_s7aa7")]
-process_mode = 1
 visible = false
 position = Vector2(1180, 100)
 scale = Vector2(0.192, 0.192)
@@ -4035,7 +4021,6 @@ collision_layer = 4
 collision_mask = 134
 
 [node name="Mid Ghost3" parent="Wave 2 Mobs" instance=ExtResource("4_s7aa7")]
-process_mode = 1
 visible = false
 position = Vector2(1135, 700)
 scale = Vector2(0.192, 0.192)
@@ -4043,7 +4028,6 @@ collision_layer = 4
 collision_mask = 134
 
 [node name="Mid Ghost4" parent="Wave 2 Mobs" instance=ExtResource("4_s7aa7")]
-process_mode = 1
 visible = false
 position = Vector2(25, 685)
 scale = Vector2(0.192, 0.192)

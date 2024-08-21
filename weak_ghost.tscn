@@ -182,6 +182,7 @@ radius = 108.0
 height = 330.0
 
 [node name="Weak Ghost" type="CharacterBody2D"]
+process_mode = 1
 collision_layer = 0
 collision_mask = 128
 script = ExtResource("1_d5qgc")
