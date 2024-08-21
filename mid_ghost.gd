@@ -3,7 +3,7 @@ extends CharacterBody2D
 signal banished
 
 var player
-var health
+var health = 0
 var death
 var slow
 var stun
