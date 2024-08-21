@@ -3,7 +3,6 @@ extends Node2D
 signal start
 signal wave_2
 signal quit
-signal _on_quit2
 
 var mob_banished
 var wave
