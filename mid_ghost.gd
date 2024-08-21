@@ -118,4 +118,3 @@ func _on_slowness_timeout():
 
 func _on_stun_timeout():
 	speed = 100
-
