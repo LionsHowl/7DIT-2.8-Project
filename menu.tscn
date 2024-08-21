@@ -8,14 +8,6 @@
 [ext_resource type="Texture2D" uid="uid://ieun8hl7jcup" path="res://Text/quit_text.png" id="6_uemld"]
 [ext_resource type="Script" path="res://confirmation.gd" id="7_3nnpq"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y6w3k"]
-bg_color = Color(1, 1, 1, 1)
-border_color = Color(0.8, 0.8, 0.8, 0)
-corner_radius_top_left = 100
-corner_radius_top_right = 100
-corner_radius_bottom_right = 100
-corner_radius_bottom_left = 100
-
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_egowe"]
 bg_color = Color(0.756863, 0.756863, 0.756863, 1)
 border_color = Color(0.8, 0.8, 0.8, 0)
@@ -24,11 +16,19 @@ corner_radius_top_right = 100
 corner_radius_bottom_right = 100
 corner_radius_bottom_left = 100
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_soj7x"]
-bg_color = Color(1, 0, 0, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y6w3k"]
+bg_color = Color(1, 1, 1, 1)
+border_color = Color(0.8, 0.8, 0.8, 0)
+corner_radius_top_left = 100
+corner_radius_top_right = 100
+corner_radius_bottom_right = 100
+corner_radius_bottom_left = 100
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j4653"]
 bg_color = Color(0.470588, 0.643137, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_soj7x"]
+bg_color = Color(1, 0, 0, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n77fq"]
 bg_color = Color(0, 1, 0, 1)
@@ -57,8 +57,8 @@ offset_top = 284.0
 offset_right = 860.5
 offset_bottom = 329.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_styles/normal = SubResource("StyleBoxFlat_y6w3k")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_egowe")
+theme_override_styles/normal = SubResource("StyleBoxFlat_y6w3k")
 
 [node name="Black Start" type="Sprite2D" parent="ColorRect/Start Button"]
 position = Vector2(281, 24)
@@ -72,8 +72,8 @@ offset_top = 369.5
 offset_right = 860.5
 offset_bottom = 414.5
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_styles/normal = SubResource("StyleBoxFlat_y6w3k")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_egowe")
+theme_override_styles/normal = SubResource("StyleBoxFlat_y6w3k")
 
 [node name="Black Instructions" type="Sprite2D" parent="ColorRect/Instructions Button"]
 position = Vector2(284, 22)
@@ -87,8 +87,8 @@ offset_top = 455.0
 offset_right = 860.5
 offset_bottom = 500.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_styles/normal = SubResource("StyleBoxFlat_y6w3k")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_egowe")
+theme_override_styles/normal = SubResource("StyleBoxFlat_y6w3k")
 
 [node name="Black Story" type="Sprite2D" parent="ColorRect/Story Button"]
 position = Vector2(284, 22)
@@ -102,8 +102,8 @@ offset_top = 540.0
 offset_right = 860.5
 offset_bottom = 585.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_styles/normal = SubResource("StyleBoxFlat_y6w3k")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_egowe")
+theme_override_styles/normal = SubResource("StyleBoxFlat_y6w3k")
 
 [node name="Black Quit" type="Sprite2D" parent="ColorRect/Quit Button"]
 position = Vector2(284, 22)
@@ -137,8 +137,8 @@ offset_top = 184.0
 offset_right = 543.0
 offset_bottom = 212.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_styles/normal = SubResource("StyleBoxFlat_soj7x")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_j4653")
+theme_override_styles/normal = SubResource("StyleBoxFlat_soj7x")
 text = "No"
 
 [node name="Yes" type="Button" parent="ColorRect/Quit Button/Confirmation"]
@@ -148,8 +148,8 @@ offset_top = 184.0
 offset_right = 457.0
 offset_bottom = 212.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_styles/normal = SubResource("StyleBoxFlat_n77fq")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_j4653")
+theme_override_styles/normal = SubResource("StyleBoxFlat_n77fq")
 text = "Yes"
 
 [connection signal="pressed" from="ColorRect/Start Button" to="." method="_on_start_button_pressed"]
