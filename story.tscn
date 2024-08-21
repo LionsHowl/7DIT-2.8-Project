@@ -1,12 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://48fkypf8dkfv"]
+[gd_scene load_steps=7 format=3 uid="uid://48fkypf8dkfv"]
 
 [ext_resource type="Script" path="res://story.gd" id="1_yid6g"]
 [ext_resource type="Texture2D" uid="uid://rasfveb7xhnw" path="res://Text/story_text.png" id="2_t73u4"]
 [ext_resource type="Texture2D" uid="uid://cwy67a2k8wq2p" path="res://Text/menu_text.png" id="3_xl1p6"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g1aqn"]
-bg_color = Color(1, 1, 1, 1)
-border_color = Color(0.8, 0.8, 0.8, 0)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3cp03"]
+bg_color = Color(0.756863, 0.756863, 0.756863, 1)
 corner_radius_top_left = 100
 corner_radius_top_right = 100
 corner_radius_bottom_right = 100
@@ -14,6 +13,14 @@ corner_radius_bottom_left = 100
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_15nui"]
 bg_color = Color(0.756863, 0.756863, 0.756863, 1)
+border_color = Color(0.8, 0.8, 0.8, 0)
+corner_radius_top_left = 100
+corner_radius_top_right = 100
+corner_radius_bottom_right = 100
+corner_radius_bottom_left = 100
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g1aqn"]
+bg_color = Color(1, 1, 1, 1)
 border_color = Color(0.8, 0.8, 0.8, 0)
 corner_radius_top_left = 100
 corner_radius_top_right = 100
@@ -41,8 +48,8 @@ offset_left = 128.0
 offset_top = 188.0
 offset_right = 1012.0
 offset_bottom = 493.0
-theme_override_font_sizes/normal_font_size = 35
 theme_override_font_sizes/bold_italics_font_size = 40
+theme_override_font_sizes/normal_font_size = 35
 bbcode_enabled = true
 text = "Oh no, there has been a [b][i]\"GHOST BREACH\"[/i][/b] and ghosts are escaping from the underworld to the human realm. Armed with a spellbook given to you by Hades when you became a Grim Reaper, you go out and fight the ghosts to send them back to the underworld."
 
@@ -60,8 +67,9 @@ offset_bottom = 245.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_styles/normal = SubResource("StyleBoxFlat_g1aqn")
+theme_override_styles/hover = SubResource("StyleBoxFlat_3cp03")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_15nui")
+theme_override_styles/normal = SubResource("StyleBoxFlat_g1aqn")
 
 [node name="Menu" type="Sprite2D" parent="ColorRect/Menu Button"]
 position = Vector2(276, 22.5)

@@ -1,19 +1,26 @@
-[gd_scene load_steps=6 format=3 uid="uid://c6lpnvoeyna2o"]
+[gd_scene load_steps=7 format=3 uid="uid://c6lpnvoeyna2o"]
 
 [ext_resource type="Script" path="res://game_over.gd" id="1_re2x0"]
 [ext_resource type="Texture2D" uid="uid://c6646nriw2t88" path="res://Text/game_over_text.png" id="2_trmbh"]
 [ext_resource type="Texture2D" uid="uid://cwy67a2k8wq2p" path="res://Text/menu_text.png" id="3_3lce1"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6d564"]
-bg_color = Color(1, 1, 1, 1)
-border_color = Color(0.8, 0.8, 0.8, 0)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oeoir"]
+bg_color = Color(0.756863, 0.756863, 0.756863, 1)
 corner_radius_top_left = 100
 corner_radius_top_right = 100
 corner_radius_bottom_right = 100
 corner_radius_bottom_left = 100
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o0xfc"]
-bg_color = Color(0.756863, 0.756863, 0.756863, 1)
+bg_color = Color(0.831373, 0.831373, 0.831373, 1)
+border_color = Color(0.8, 0.8, 0.8, 0)
+corner_radius_top_left = 100
+corner_radius_top_right = 100
+corner_radius_bottom_right = 100
+corner_radius_bottom_left = 100
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6d564"]
+bg_color = Color(1, 1, 1, 1)
 border_color = Color(0.8, 0.8, 0.8, 0)
 corner_radius_top_left = 100
 corner_radius_top_right = 100
@@ -50,8 +57,9 @@ offset_bottom = 142.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_styles/normal = SubResource("StyleBoxFlat_6d564")
+theme_override_styles/hover = SubResource("StyleBoxFlat_oeoir")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_o0xfc")
+theme_override_styles/normal = SubResource("StyleBoxFlat_6d564")
 
 [node name="Menu" type="Sprite2D" parent="ColorRect/Menu Button"]
 position = Vector2(276, 22.5)
