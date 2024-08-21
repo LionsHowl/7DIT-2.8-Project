@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=4 uid="uid://243h6nll0578"]
+[gd_scene load_steps=38 format=4 uid="uid://243h6nll0578"]
 
 [ext_resource type="Script" path="res://game.gd" id="1_2de62"]
 [ext_resource type="PackedScene" uid="uid://no5lt6r0mcwc" path="res://weak_ghost.tscn" id="2_fb58j"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://dhc1wtbcyfyp5" path="res://mid_ghost.tscn" id="4_s7aa7"]
 [ext_resource type="PackedScene" uid="uid://c6lpnvoeyna2o" path="res://game_over.tscn" id="5_y8vrr"]
 [ext_resource type="PackedScene" uid="uid://g7t6hrmcf2g3" path="res://menu.tscn" id="6_74tg7"]
+[ext_resource type="PackedScene" uid="uid://c5e7jn0jo32pr" path="res://pause_menu.tscn" id="7_pc3h3"]
 [ext_resource type="PackedScene" uid="uid://bomdlh7d1w74d" path="res://instuctions.tscn" id="7_x2by6"]
 [ext_resource type="PackedScene" uid="uid://48fkypf8dkfv" path="res://story.tscn" id="8_ut5mi"]
 [ext_resource type="Script" path="res://fade_headings.gd" id="10_ahdf6"]
@@ -4048,6 +4049,8 @@ scale = Vector2(0.609116, 0.609116)
 [node name="Game Over" parent="." instance=ExtResource("5_y8vrr")]
 process_mode = 2
 visible = false
+
+[node name="Pause Menu" parent="." instance=ExtResource("7_pc3h3")]
 
 [node name="Menu" parent="." instance=ExtResource("6_74tg7")]
 

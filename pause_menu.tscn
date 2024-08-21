@@ -1,0 +1,99 @@
+[gd_scene load_steps=10 format=3 uid="uid://c5e7jn0jo32pr"]
+
+[ext_resource type="Script" path="res://pause.gd" id="1_y3r2e"]
+[ext_resource type="Texture2D" uid="uid://bpgg6dmutdbbt" path="res://Text/back.png" id="2_f80ea"]
+[ext_resource type="Texture2D" uid="uid://ieun8hl7jcup" path="res://Text/quit_text.png" id="3_5lmt2"]
+[ext_resource type="PackedScene" uid="uid://b6yc2iqcs7s73" path="res://confirmation.tscn" id="4_l73fq"]
+[ext_resource type="Texture2D" uid="uid://cxdkdh6boggij" path="res://Text/paused.png" id="5_p0hub"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w7f2v"]
+bg_color = Color(0.756863, 0.756863, 0.756863, 1)
+corner_radius_top_left = 100
+corner_radius_top_right = 100
+corner_radius_bottom_right = 100
+corner_radius_bottom_left = 100
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j37n3"]
+bg_color = Color(0.830335, 0.830335, 0.830335, 1)
+border_color = Color(0.8, 0.8, 0.8, 0)
+corner_radius_top_left = 100
+corner_radius_top_right = 100
+corner_radius_bottom_right = 100
+corner_radius_bottom_left = 100
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mlkpc"]
+bg_color = Color(1, 1, 1, 1)
+border_color = Color(0.8, 0.8, 0.8, 0)
+corner_radius_top_left = 100
+corner_radius_top_right = 100
+corner_radius_bottom_right = 100
+corner_radius_bottom_left = 100
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2qh02"]
+bg_color = Color(0.756863, 0.756863, 0.756863, 1)
+corner_radius_top_left = 100
+corner_radius_top_right = 100
+corner_radius_bottom_right = 100
+corner_radius_bottom_left = 100
+
+[node name="Pause Menu" type="CanvasLayer"]
+process_mode = 3
+visible = false
+script = ExtResource("1_y3r2e")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.588235)
+
+[node name="Back Button" type="Button" parent="ColorRect"]
+layout_mode = 0
+offset_left = 292.5
+offset_top = 421.0
+offset_right = 860.5
+offset_bottom = 466.0
+scale = Vector2(1.00555, 1.00555)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/hover = SubResource("StyleBoxFlat_w7f2v")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_j37n3")
+theme_override_styles/normal = SubResource("StyleBoxFlat_mlkpc")
+
+[node name="Back" type="Sprite2D" parent="ColorRect/Back Button"]
+position = Vector2(284, 22)
+scale = Vector2(0.935891, 0.935891)
+texture = ExtResource("2_f80ea")
+
+[node name="Quit Button" type="Button" parent="ColorRect"]
+layout_mode = 0
+offset_left = 292.5
+offset_top = 506.0
+offset_right = 860.5
+offset_bottom = 551.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/hover = SubResource("StyleBoxFlat_2qh02")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_j37n3")
+theme_override_styles/normal = SubResource("StyleBoxFlat_mlkpc")
+
+[node name="Black Quit" type="Sprite2D" parent="ColorRect/Quit Button"]
+position = Vector2(284, 22)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("3_5lmt2")
+
+[node name="Confirmation" parent="ColorRect/Quit Button/Black Quit" instance=ExtResource("4_l73fq")]
+visible = false
+z_index = 1
+offset_left = -300.0
+offset_top = -700.0
+offset_right = 276.0
+offset_bottom = -467.0
+
+[node name="Pause" type="Sprite2D" parent="ColorRect"]
+position = Vector2(576, 215)
+scale = Vector2(1.98796, 1.98796)
+texture = ExtResource("5_p0hub")
+
+[connection signal="pressed" from="ColorRect/Back Button" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="ColorRect/Quit Button" to="ColorRect/Quit Button/Black Quit/Confirmation" method="_on_menu_quit_2"]

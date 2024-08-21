@@ -16,6 +16,5 @@ func _on_menu_quit_2():
 
 
 func _on_game_quit():
-	print("eh")
 	visible = true
 	get_tree().paused = true
