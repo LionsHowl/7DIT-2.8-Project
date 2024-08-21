@@ -1,0 +1,53 @@
+[gd_scene load_steps=5 format=3 uid="uid://b6yc2iqcs7s73"]
+
+[ext_resource type="Script" path="res://confirmation.gd" id="1_okrj1"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h2ofh"]
+bg_color = Color(0.470588, 0.643137, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xdtmp"]
+bg_color = Color(1, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wft1p"]
+bg_color = Color(0, 1, 0, 1)
+
+[node name="Confirmation" type="ColorRect"]
+process_mode = 3
+offset_left = 288.0
+offset_top = 75.0
+offset_right = 864.0
+offset_bottom = 308.0
+color = Color(0, 0, 0, 1)
+script = ExtResource("1_okrj1")
+
+[node name="Confirmation Message" type="Label" parent="."]
+offset_left = 38.0
+offset_top = 29.0
+offset_right = 523.0
+offset_bottom = 68.0
+theme_override_font_sizes/font_size = 31
+text = "Are you sure you want to quit the game?"
+autowrap_mode = 2
+
+[node name="No" type="Button" parent="."]
+offset_left = 450.0
+offset_top = 160.0
+offset_right = 550.0
+offset_bottom = 210.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/pressed = SubResource("StyleBoxFlat_h2ofh")
+theme_override_styles/normal = SubResource("StyleBoxFlat_xdtmp")
+text = "No"
+
+[node name="Yes" type="Button" parent="."]
+offset_left = 325.5
+offset_top = 160.0
+offset_right = 425.5
+offset_bottom = 210.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/pressed = SubResource("StyleBoxFlat_h2ofh")
+theme_override_styles/normal = SubResource("StyleBoxFlat_wft1p")
+text = "Yes"
+
+[connection signal="pressed" from="No" to="." method="_on_no_pressed"]
+[connection signal="pressed" from="Yes" to="." method="_on_yes_pressed"]

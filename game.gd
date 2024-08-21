@@ -2,9 +2,12 @@ extends Node2D
 
 signal start
 signal wave_2
+signal quit
+signal _on_quit2
 
 var mob_banished
 var wave
+var menu = "yes"
 
 
 func _enter_tree():
@@ -14,6 +17,7 @@ func _enter_tree():
 func _on_menu_start():
 	wave = 1
 	mob_banished = 0
+	menu = "no"
 	
 	%"Fade Headings".one()
 
@@ -36,7 +40,8 @@ func _on_ghost_banished():
 
 func _process(_delta):
 	if Input.is_action_just_pressed("quit"):
-		get_tree().quit()
+		if get_tree().paused != true and menu == "no":
+			quit.emit()
 
 
 func _on_fade_headings_animation_finished(anim_name):

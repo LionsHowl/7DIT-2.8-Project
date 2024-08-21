@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://g7t6hrmcf2g3"]
+[gd_scene load_steps=14 format=3 uid="uid://g7t6hrmcf2g3"]
 
 [ext_resource type="Script" path="res://menu.gd" id="1_6cksp"]
 [ext_resource type="Texture2D" uid="uid://bgcmsantqjsws" path="res://Text/ghost_breach_text_white.png" id="2_rfm2n"]
@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://qrdu5nwrggaf" path="res://Text/instructions_button_text.png" id="4_po4sk"]
 [ext_resource type="Texture2D" uid="uid://cuy1kt3bowmxo" path="res://Text/story_button_text.png" id="5_35vaf"]
 [ext_resource type="Texture2D" uid="uid://ieun8hl7jcup" path="res://Text/quit_text.png" id="6_uemld"]
-[ext_resource type="Script" path="res://confirmation.gd" id="7_3nnpq"]
+[ext_resource type="PackedScene" uid="uid://b6yc2iqcs7s73" path="res://confirmation.tscn" id="7_cww7n"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3ppma"]
 bg_color = Color(0.756863, 0.756863, 0.756863, 1)
@@ -51,15 +51,6 @@ corner_radius_top_left = 100
 corner_radius_top_right = 100
 corner_radius_bottom_right = 100
 corner_radius_bottom_left = 100
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j4653"]
-bg_color = Color(0.470588, 0.643137, 1, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_soj7x"]
-bg_color = Color(1, 0, 0, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n77fq"]
-bg_color = Color(0, 1, 0, 1)
 
 [node name="Menu" type="CanvasLayer"]
 process_mode = 2
@@ -142,51 +133,15 @@ position = Vector2(284, 22)
 scale = Vector2(0.7, 0.7)
 texture = ExtResource("6_uemld")
 
-[node name="Confirmation" type="ColorRect" parent="ColorRect/Quit Button"]
+[node name="Confirmation" parent="ColorRect/Quit Button/Black Quit" instance=ExtResource("7_cww7n")]
 visible = false
-layout_mode = 0
-offset_left = -1.0
-offset_top = -348.0
-offset_right = 575.0
-offset_bottom = -115.0
-color = Color(0, 0, 0, 1)
-script = ExtResource("7_3nnpq")
+offset_left = -300.0
+offset_top = -700.0
+offset_right = 276.0
+offset_bottom = -467.0
 
-[node name="Confirmation Message" type="Label" parent="ColorRect/Quit Button/Confirmation"]
-layout_mode = 0
-offset_left = 38.0
-offset_top = 29.0
-offset_right = 523.0
-offset_bottom = 68.0
-theme_override_font_sizes/font_size = 31
-text = "Are you sure you want to quit the game?"
-autowrap_mode = 2
-
-[node name="No" type="Button" parent="ColorRect/Quit Button/Confirmation"]
-layout_mode = 0
-offset_left = 484.0
-offset_top = 184.0
-offset_right = 543.0
-offset_bottom = 212.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_styles/pressed = SubResource("StyleBoxFlat_j4653")
-theme_override_styles/normal = SubResource("StyleBoxFlat_soj7x")
-text = "No"
-
-[node name="Yes" type="Button" parent="ColorRect/Quit Button/Confirmation"]
-layout_mode = 0
-offset_left = 398.0
-offset_top = 184.0
-offset_right = 457.0
-offset_bottom = 212.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_styles/pressed = SubResource("StyleBoxFlat_j4653")
-theme_override_styles/normal = SubResource("StyleBoxFlat_n77fq")
-text = "Yes"
-
+[connection signal="quit2" from="." to="ColorRect/Quit Button/Black Quit/Confirmation" method="_on_menu_quit_2"]
 [connection signal="pressed" from="ColorRect/Start Button" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="ColorRect/Instructions Button" to="." method="_on_instructions_button_pressed"]
 [connection signal="pressed" from="ColorRect/Story Button" to="." method="_on_story_button_pressed"]
-[connection signal="pressed" from="ColorRect/Quit Button" to="ColorRect/Quit Button/Confirmation" method="_on_quit_button_pressed"]
-[connection signal="pressed" from="ColorRect/Quit Button/Confirmation/No" to="ColorRect/Quit Button/Confirmation" method="_on_no_pressed"]
-[connection signal="pressed" from="ColorRect/Quit Button/Confirmation/Yes" to="ColorRect/Quit Button/Confirmation" method="_on_yes_pressed"]
+[connection signal="pressed" from="ColorRect/Quit Button" to="." method="_on_quit_button_pressed"]

@@ -66,6 +66,7 @@ func _on_dead():
 	%"Health Bar".visible = false
 	get_node("Spellbook").visible = false
 	get_tree().paused = true
+	get_parent().menu = "yes"
 	
 	if facing == "Right":
 		%"Animated Body".play_dying()
