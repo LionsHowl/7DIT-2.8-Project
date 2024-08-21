@@ -25,7 +25,7 @@ func _ready():
 func _physics_process(delta):
 	if status == "Alive":
 		direction = Input.get_vector("move_left","move_right","move_up","move_down")
-		overlaping_weak_mobs = %"Hurt Box/Weak".get_overlapping_bodies()
+		overlaping_weak_mobs = %"Hurt Box/Weak_Mid".get_overlapping_bodies()
 		
 		velocity = direction * 150
 		
