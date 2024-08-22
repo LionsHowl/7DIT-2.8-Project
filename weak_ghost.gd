@@ -30,7 +30,7 @@ func _physics_process(_delta):
 func dying():
 	status = "Dead"
 	
-	get_node("Ghost").play_death()
+	get_node("Ghost").play_dying()
 	death.start()
 	banished.emit()
 
@@ -80,7 +80,7 @@ func reset():
 	visible = true
 	status = "Alive"
 	
-	get_node("Ghost").play_walk()
+	get_node("Ghost").play_movement()
 
 
 func _on_game_start():
@@ -152,3 +152,23 @@ func _on_slowness_timeout():
 
 func _on_stun_timeout():
 	speed = 75
+
+
+func _on_game_wave_3():
+	reset()
+
+
+func _on_game_over_menu13():
+	position = Vector2(175, -50)
+
+
+func _on_game_over_menu14():
+	position = Vector2(-76, 490)
+
+
+func _on_game_over_menu15():
+	position = Vector2(1215, 505)
+
+
+func _on_game_over_menu16():
+	position = Vector2(1165, -35)

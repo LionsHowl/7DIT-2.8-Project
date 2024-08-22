@@ -2,6 +2,7 @@ extends Node2D
 
 signal start
 signal wave_2
+signal wave_3
 signal quit
 
 var mob_banished
@@ -49,3 +50,5 @@ func _on_fade_headings_animation_finished(anim_name):
 		start.emit()
 	elif anim_name == "Wave 2":
 		wave_2.emit()
+	elif anim_name == "Wave 3":
+		wave_3.emit()

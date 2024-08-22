@@ -28,7 +28,7 @@
 [ext_resource type="Texture2D" uid="uid://bdbu6nqdk0lo6" path="res://PNG/Wraith_01/PNG Sequences/Walking/Wraith_01_Moving Forward_009.png" id="26_0sewe"]
 [ext_resource type="Texture2D" uid="uid://cwn0nmpfp0imy" path="res://PNG/Wraith_01/PNG Sequences/Walking/Wraith_01_Moving Forward_010.png" id="27_ocf8o"]
 [ext_resource type="Texture2D" uid="uid://c21t5ws2acma8" path="res://PNG/Wraith_01/PNG Sequences/Walking/Wraith_01_Moving Forward_011.png" id="28_33lac"]
-[ext_resource type="Script" path="res://animations.gd" id="29_43x3x"]
+[ext_resource type="Script" path="res://ghost_animations.gd" id="29_43x3x"]
 [ext_resource type="Texture2D" uid="uid://dud4iq3awgynk" path="res://PNG/Wraith_01/PNG Sequences/Hurt/Wraith_01_Hurt_000.png" id="29_ef50p"]
 [ext_resource type="Texture2D" uid="uid://b83jfwt3mwy8q" path="res://PNG/Wraith_01/PNG Sequences/Hurt/Wraith_01_Hurt_001.png" id="30_hgeyl"]
 [ext_resource type="Texture2D" uid="uid://goa4w2113cf" path="res://PNG/Wraith_01/PNG Sequences/Hurt/Wraith_01_Hurt_002.png" id="31_f4t5o"]
@@ -92,7 +92,7 @@ animations = [{
 "texture": ExtResource("16_ngvmr")
 }],
 "loop": false,
-"name": &"Dying",
+"name": &"Death",
 "speed": 10.0
 }, {
 "frames": [{

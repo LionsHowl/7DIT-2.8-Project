@@ -1,10 +1,11 @@
-[gd_scene load_steps=38 format=4 uid="uid://243h6nll0578"]
+[gd_scene load_steps=39 format=4 uid="uid://243h6nll0578"]
 
 [ext_resource type="Script" path="res://game.gd" id="1_2de62"]
 [ext_resource type="PackedScene" uid="uid://no5lt6r0mcwc" path="res://weak_ghost.tscn" id="2_fb58j"]
 [ext_resource type="PackedScene" uid="uid://c807sqp4yr0to" path="res://player.tscn" id="2_v33ig"]
 [ext_resource type="Texture2D" uid="uid://boihhcbqmikfo" path="res://Spritesheet/roguelikeSheet_transparent.png" id="3_7u1bn"]
 [ext_resource type="PackedScene" uid="uid://dhc1wtbcyfyp5" path="res://mid_ghost.tscn" id="4_s7aa7"]
+[ext_resource type="PackedScene" uid="uid://bsw87ckmy0owt" path="res://strong_ghost.tscn" id="5_jxfxl"]
 [ext_resource type="PackedScene" uid="uid://c6lpnvoeyna2o" path="res://game_over.tscn" id="5_y8vrr"]
 [ext_resource type="PackedScene" uid="uid://g7t6hrmcf2g3" path="res://menu.tscn" id="6_74tg7"]
 [ext_resource type="PackedScene" uid="uid://c5e7jn0jo32pr" path="res://pause_menu.tscn" id="7_pc3h3"]
@@ -4039,6 +4040,65 @@ scale = Vector2(0.192, 0.192)
 collision_layer = 4
 collision_mask = 134
 
+[node name="Wave 3 Mobs" type="Node" parent="."]
+process_mode = 4
+
+[node name="Weak Ghost13" parent="Wave 3 Mobs" instance=ExtResource("2_fb58j")]
+position = Vector2(175, -50)
+scale = Vector2(0.191929, 0.191929)
+collision_layer = 2
+collision_mask = 134
+
+[node name="Weak Ghost14" parent="Wave 3 Mobs" instance=ExtResource("2_fb58j")]
+position = Vector2(-75, 490)
+scale = Vector2(0.191929, 0.191929)
+collision_layer = 2
+collision_mask = 134
+
+[node name="Weak Ghost15" parent="Wave 3 Mobs" instance=ExtResource("2_fb58j")]
+position = Vector2(1215, 505)
+scale = Vector2(0.191929, 0.191929)
+collision_layer = 2
+collision_mask = 134
+
+[node name="Weak Ghost16" parent="Wave 3 Mobs" instance=ExtResource("2_fb58j")]
+position = Vector2(1165, -35)
+scale = Vector2(0.191929, 0.191929)
+collision_layer = 2
+collision_mask = 134
+
+[node name="Mid Ghost5" parent="Wave 3 Mobs" instance=ExtResource("4_s7aa7")]
+position = Vector2(-60, 115)
+scale = Vector2(0.192, 0.192)
+collision_layer = 4
+collision_mask = 134
+
+[node name="Mid Ghost6" parent="Wave 3 Mobs" instance=ExtResource("4_s7aa7")]
+position = Vector2(1210, 210)
+scale = Vector2(0.192, 0.192)
+collision_layer = 4
+collision_mask = 134
+
+[node name="Mid Ghost7" parent="Wave 3 Mobs" instance=ExtResource("4_s7aa7")]
+position = Vector2(910, 730)
+scale = Vector2(0.192, 0.192)
+collision_layer = 4
+collision_mask = 134
+
+[node name="Mid Ghost8" parent="Wave 3 Mobs" instance=ExtResource("4_s7aa7")]
+position = Vector2(-50, 665)
+scale = Vector2(0.192, 0.192)
+collision_layer = 4
+collision_mask = 134
+
+[node name="Strong Ghost" parent="Wave 3 Mobs" instance=ExtResource("5_jxfxl")]
+position = Vector2(115, 730)
+scale = Vector2(0.192, 0.192)
+
+[node name="Strong Ghost2" parent="Wave 3 Mobs" instance=ExtResource("5_jxfxl")]
+position = Vector2(910, -100)
+scale = Vector2(0.192, 0.192)
+
 [node name="Player" parent="." instance=ExtResource("2_v33ig")]
 process_mode = 1
 visible = false
@@ -4116,12 +4176,11 @@ metadata/_edit_lock_ = true
 visible = false
 z_index = 1
 
-[connection signal="_on_quit2" from="." to="Menu" method="_on_game__on_quit_2"]
 [connection signal="quit" from="." to="Confirmation" method="_on_game_quit"]
-[connection signal="start" from="." to="Wave 1 Mobs/Weak Ghost" method="_on_game_start1"]
 [connection signal="start" from="." to="Wave 1 Mobs/Weak Ghost" method="_on_game_start"]
-[connection signal="start" from="." to="Wave 1 Mobs/Weak Ghost2" method="_on_game_start2"]
+[connection signal="start" from="." to="Wave 1 Mobs/Weak Ghost" method="_on_game_start1"]
 [connection signal="start" from="." to="Wave 1 Mobs/Weak Ghost2" method="_on_game_start"]
+[connection signal="start" from="." to="Wave 1 Mobs/Weak Ghost2" method="_on_game_start2"]
 [connection signal="start" from="." to="Wave 1 Mobs/Weak Ghost3" method="_on_game_start"]
 [connection signal="start" from="." to="Wave 1 Mobs/Weak Ghost3" method="_on_game_start3"]
 [connection signal="start" from="." to="Wave 1 Mobs/Weak Ghost4" method="_on_game_start4"]
@@ -4141,6 +4200,16 @@ z_index = 1
 [connection signal="wave_2" from="." to="Wave 2 Mobs/Mid Ghost2" method="_on_game_wave_2"]
 [connection signal="wave_2" from="." to="Wave 2 Mobs/Mid Ghost3" method="_on_game_wave_2"]
 [connection signal="wave_2" from="." to="Wave 2 Mobs/Mid Ghost4" method="_on_game_wave_2"]
+[connection signal="wave_3" from="." to="Wave 3 Mobs/Weak Ghost13" method="_on_game_wave_3"]
+[connection signal="wave_3" from="." to="Wave 3 Mobs/Weak Ghost14" method="_on_game_wave_3"]
+[connection signal="wave_3" from="." to="Wave 3 Mobs/Weak Ghost15" method="_on_game_wave_3"]
+[connection signal="wave_3" from="." to="Wave 3 Mobs/Weak Ghost16" method="_on_game_wave_3"]
+[connection signal="wave_3" from="." to="Wave 3 Mobs/Mid Ghost5" method="_on_game_wave_3"]
+[connection signal="wave_3" from="." to="Wave 3 Mobs/Mid Ghost6" method="_on_game_wave_3"]
+[connection signal="wave_3" from="." to="Wave 3 Mobs/Mid Ghost7" method="_on_game_wave_3"]
+[connection signal="wave_3" from="." to="Wave 3 Mobs/Mid Ghost8" method="_on_game_wave_3"]
+[connection signal="wave_3" from="." to="Wave 3 Mobs/Strong Ghost" method="_on_game_wave_3"]
+[connection signal="wave_3" from="." to="Wave 3 Mobs/Strong Ghost2" method="_on_game_wave_3"]
 [connection signal="banished" from="Wave 1 Mobs/Weak Ghost" to="." method="_on_ghost_banished"]
 [connection signal="banished" from="Wave 1 Mobs/Weak Ghost2" to="." method="_on_ghost_banished"]
 [connection signal="banished" from="Wave 1 Mobs/Weak Ghost3" to="." method="_on_ghost_banished"]
@@ -4157,6 +4226,16 @@ z_index = 1
 [connection signal="banished" from="Wave 2 Mobs/Mid Ghost2" to="." method="_on_ghost_banished"]
 [connection signal="banished" from="Wave 2 Mobs/Mid Ghost3" to="." method="_on_ghost_banished"]
 [connection signal="banished" from="Wave 2 Mobs/Mid Ghost4" to="." method="_on_ghost_banished"]
+[connection signal="banished" from="Wave 3 Mobs/Weak Ghost13" to="." method="_on_ghost_banished"]
+[connection signal="banished" from="Wave 3 Mobs/Weak Ghost14" to="." method="_on_ghost_banished"]
+[connection signal="banished" from="Wave 3 Mobs/Weak Ghost15" to="." method="_on_ghost_banished"]
+[connection signal="banished" from="Wave 3 Mobs/Weak Ghost16" to="." method="_on_ghost_banished"]
+[connection signal="banished" from="Wave 3 Mobs/Mid Ghost5" to="." method="_on_ghost_banished"]
+[connection signal="banished" from="Wave 3 Mobs/Mid Ghost6" to="." method="_on_ghost_banished"]
+[connection signal="banished" from="Wave 3 Mobs/Mid Ghost7" to="." method="_on_ghost_banished"]
+[connection signal="banished" from="Wave 3 Mobs/Mid Ghost8" to="." method="_on_ghost_banished"]
+[connection signal="banished" from="Wave 3 Mobs/Strong Ghost" to="." method="_on_ghost_banished"]
+[connection signal="banished" from="Wave 3 Mobs/Strong Ghost2" to="." method="_on_ghost_banished"]
 [connection signal="dead" from="Player" to="Respawn" method="_on_player_dead"]
 [connection signal="menu" from="Game Over" to="Wave 1 Mobs/Weak Ghost" method="_on_game_over_menu"]
 [connection signal="menu" from="Game Over" to="Wave 1 Mobs/Weak Ghost2" method="_on_game_over_menu"]
@@ -4166,24 +4245,44 @@ z_index = 1
 [connection signal="menu" from="Game Over" to="Wave 1 Mobs/Weak Ghost6" method="_on_game_over_menu"]
 [connection signal="menu" from="Game Over" to="Wave 2 Mobs/Weak Ghost7" method="_on_game_over_menu7"]
 [connection signal="menu" from="Game Over" to="Wave 2 Mobs/Weak Ghost7" method="_on_game_over_menu"]
-[connection signal="menu" from="Game Over" to="Wave 2 Mobs/Weak Ghost8" method="_on_game_over_menu"]
 [connection signal="menu" from="Game Over" to="Wave 2 Mobs/Weak Ghost8" method="_on_game_over_menu8"]
-[connection signal="menu" from="Game Over" to="Wave 2 Mobs/Weak Ghost9" method="_on_game_over_menu"]
+[connection signal="menu" from="Game Over" to="Wave 2 Mobs/Weak Ghost8" method="_on_game_over_menu"]
 [connection signal="menu" from="Game Over" to="Wave 2 Mobs/Weak Ghost9" method="_on_game_over_menu9"]
+[connection signal="menu" from="Game Over" to="Wave 2 Mobs/Weak Ghost9" method="_on_game_over_menu"]
 [connection signal="menu" from="Game Over" to="Wave 2 Mobs/Weak Ghost10" method="_on_game_over_menu10"]
 [connection signal="menu" from="Game Over" to="Wave 2 Mobs/Weak Ghost10" method="_on_game_over_menu"]
 [connection signal="menu" from="Game Over" to="Wave 2 Mobs/Weak Ghost11" method="_on_game_over_menu11"]
 [connection signal="menu" from="Game Over" to="Wave 2 Mobs/Weak Ghost11" method="_on_game_over_menu"]
-[connection signal="menu" from="Game Over" to="Wave 2 Mobs/Weak Ghost12" method="_on_game_over_menu"]
 [connection signal="menu" from="Game Over" to="Wave 2 Mobs/Weak Ghost12" method="_on_game_over_menu12"]
+[connection signal="menu" from="Game Over" to="Wave 2 Mobs/Weak Ghost12" method="_on_game_over_menu"]
 [connection signal="menu" from="Game Over" to="Wave 2 Mobs/Mid Ghost" method="_on_game_over_menu1"]
 [connection signal="menu" from="Game Over" to="Wave 2 Mobs/Mid Ghost" method="_on_game_over_menu"]
-[connection signal="menu" from="Game Over" to="Wave 2 Mobs/Mid Ghost2" method="_on_game_over_menu2"]
 [connection signal="menu" from="Game Over" to="Wave 2 Mobs/Mid Ghost2" method="_on_game_over_menu"]
-[connection signal="menu" from="Game Over" to="Wave 2 Mobs/Mid Ghost3" method="_on_game_over_menu3"]
+[connection signal="menu" from="Game Over" to="Wave 2 Mobs/Mid Ghost2" method="_on_game_over_menu2"]
 [connection signal="menu" from="Game Over" to="Wave 2 Mobs/Mid Ghost3" method="_on_game_over_menu"]
-[connection signal="menu" from="Game Over" to="Wave 2 Mobs/Mid Ghost4" method="_on_game_over_menu4"]
+[connection signal="menu" from="Game Over" to="Wave 2 Mobs/Mid Ghost3" method="_on_game_over_menu3"]
 [connection signal="menu" from="Game Over" to="Wave 2 Mobs/Mid Ghost4" method="_on_game_over_menu"]
+[connection signal="menu" from="Game Over" to="Wave 2 Mobs/Mid Ghost4" method="_on_game_over_menu4"]
+[connection signal="menu" from="Game Over" to="Wave 3 Mobs/Weak Ghost13" method="_on_game_over_menu13"]
+[connection signal="menu" from="Game Over" to="Wave 3 Mobs/Weak Ghost13" method="_on_game_over_menu"]
+[connection signal="menu" from="Game Over" to="Wave 3 Mobs/Weak Ghost14" method="_on_game_over_menu14"]
+[connection signal="menu" from="Game Over" to="Wave 3 Mobs/Weak Ghost14" method="_on_game_over_menu"]
+[connection signal="menu" from="Game Over" to="Wave 3 Mobs/Weak Ghost15" method="_on_game_over_menu15"]
+[connection signal="menu" from="Game Over" to="Wave 3 Mobs/Weak Ghost15" method="_on_game_over_menu"]
+[connection signal="menu" from="Game Over" to="Wave 3 Mobs/Weak Ghost16" method="_on_game_over_menu16"]
+[connection signal="menu" from="Game Over" to="Wave 3 Mobs/Weak Ghost16" method="_on_game_over_menu"]
+[connection signal="menu" from="Game Over" to="Wave 3 Mobs/Mid Ghost5" method="_on_game_over_menu5"]
+[connection signal="menu" from="Game Over" to="Wave 3 Mobs/Mid Ghost5" method="_on_game_over_menu"]
+[connection signal="menu" from="Game Over" to="Wave 3 Mobs/Mid Ghost6" method="_on_game_over_menu6"]
+[connection signal="menu" from="Game Over" to="Wave 3 Mobs/Mid Ghost6" method="_on_game_over_menu"]
+[connection signal="menu" from="Game Over" to="Wave 3 Mobs/Mid Ghost7" method="_on_game_over_menu7"]
+[connection signal="menu" from="Game Over" to="Wave 3 Mobs/Mid Ghost7" method="_on_game_over_menu"]
+[connection signal="menu" from="Game Over" to="Wave 3 Mobs/Mid Ghost8" method="_on_game_over_menu8"]
+[connection signal="menu" from="Game Over" to="Wave 3 Mobs/Mid Ghost8" method="_on_game_over_menu"]
+[connection signal="menu" from="Game Over" to="Wave 3 Mobs/Strong Ghost" method="_on_game_over_menu1"]
+[connection signal="menu" from="Game Over" to="Wave 3 Mobs/Strong Ghost" method="_on_game_over_menu"]
+[connection signal="menu" from="Game Over" to="Wave 3 Mobs/Strong Ghost2" method="_on_game_over_menu"]
+[connection signal="menu" from="Game Over" to="Wave 3 Mobs/Strong Ghost2" method="_on_game_over_menu2"]
 [connection signal="menu" from="Game Over" to="Player" method="_on_game_over_menu"]
 [connection signal="menu" from="Game Over" to="Menu" method="_on_game_over_menu"]
 [connection signal="instructions" from="Menu" to="Menu/Instuctions" method="_on_menu_instructions"]
@@ -4198,6 +4297,16 @@ z_index = 1
 [connection signal="start" from="Menu" to="Wave 2 Mobs/Mid Ghost2" method="_on_menu_start"]
 [connection signal="start" from="Menu" to="Wave 2 Mobs/Mid Ghost3" method="_on_menu_start"]
 [connection signal="start" from="Menu" to="Wave 2 Mobs/Mid Ghost4" method="_on_menu_start"]
+[connection signal="start" from="Menu" to="Wave 3 Mobs/Weak Ghost13" method="_on_menu_start"]
+[connection signal="start" from="Menu" to="Wave 3 Mobs/Weak Ghost14" method="_on_menu_start"]
+[connection signal="start" from="Menu" to="Wave 3 Mobs/Weak Ghost15" method="_on_menu_start"]
+[connection signal="start" from="Menu" to="Wave 3 Mobs/Weak Ghost16" method="_on_menu_start"]
+[connection signal="start" from="Menu" to="Wave 3 Mobs/Mid Ghost5" method="_on_menu_start"]
+[connection signal="start" from="Menu" to="Wave 3 Mobs/Mid Ghost6" method="_on_menu_start"]
+[connection signal="start" from="Menu" to="Wave 3 Mobs/Mid Ghost7" method="_on_menu_start"]
+[connection signal="start" from="Menu" to="Wave 3 Mobs/Mid Ghost8" method="_on_menu_start"]
+[connection signal="start" from="Menu" to="Wave 3 Mobs/Strong Ghost" method="_on_menu_start"]
+[connection signal="start" from="Menu" to="Wave 3 Mobs/Strong Ghost2" method="_on_menu_start"]
 [connection signal="start" from="Menu" to="Player" method="_on_menu_start"]
 [connection signal="start" from="Menu" to="Respawn" method="_on_menu_start"]
 [connection signal="story" from="Menu" to="Menu/Story" method="_on_menu_story"]

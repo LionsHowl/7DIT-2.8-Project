@@ -18,7 +18,6 @@ func _ready():
 	slow = get_node("Slowness")
 	stun = get_node("Stun")
 	status = "Alive"
-	get_node("Animations").play_movement()
 
 
 func _physics_process(_delta):
@@ -32,7 +31,7 @@ func _physics_process(_delta):
 func dying():
 	status = "Dead"
 	
-	get_node("Animations").play_dying()
+	get_node("Ghost").play_dying()
 	death.start()
 	banished.emit()
 	
@@ -74,16 +73,9 @@ func take_air_damage():
 		dying()
 
 
-func _on_timer_timeout():
+func _on_death_timeout():
 	visible = false
 	position = Vector2(1250, 625)
-
-
-func reset():
-	health = 5
-	visible = true
-	
-	get_node("Animations").play_movement()
 
 
 func _on_game_over_menu():
@@ -91,28 +83,18 @@ func _on_game_over_menu():
 
 
 func _on_game_over_menu1():
-	position = Vector2(-20, 25)
+	position = Vector2(115, 730)
 
 
 func _on_game_over_menu2():
-	position = Vector2(1180, 100)
+	position = Vector2(910, -100)
 
 
-func _on_game_over_menu3():
-	position = Vector2(1135, 700)
-
-
-func _on_game_over_menu4():
-	position = Vector2(25, 685)
-
-
-func _on_game_wave_2():
-	reset()
-
-
-func _on_menu_start():
-	health = 0
-
+func _on_game_wave_3():
+	health = 7
+	visible = true
+	
+	get_node("Ghost").play_movement()
 
 func _on_slowness_timeout():
 	speed *= 2
@@ -120,23 +102,3 @@ func _on_slowness_timeout():
 
 func _on_stun_timeout():
 	speed = 100
-
-
-func _on_game_wave_3():
-	reset()
-
-
-func _on_game_over_menu5():
-	position = Vector2(-60, 115)
-
-
-func _on_game_over_menu6():
-	position = Vector2(2100, 210)
-
-
-func _on_game_over_menu7():
-	position = Vector2(910, 730)
-
-
-func _on_game_over_menu8():
-	position = Vector2(-50, 665)
