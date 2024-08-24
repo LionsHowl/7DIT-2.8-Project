@@ -99,6 +99,8 @@ pause={
 2d_physics/layer_6="Wave 3 Strong"
 2d_physics/layer_7="Screen"
 2d_physics/layer_8="Player"
+2d_physics/layer_9="Random Weak/Mid"
+2d_physics/layer_10="Random Strong"
 
 [rendering]
 

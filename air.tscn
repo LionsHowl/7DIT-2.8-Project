@@ -11,7 +11,7 @@ height = 513.333
 top_level = true
 scale = Vector2(0.15, 0.15)
 collision_layer = 0
-collision_mask = 63
+collision_mask = 831
 script = ExtResource("1_tpc7h")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

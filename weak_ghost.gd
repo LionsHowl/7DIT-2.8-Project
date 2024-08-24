@@ -7,6 +7,7 @@ var death
 var slow
 var stun
 var direction
+var main
 var health = 0
 var speed = 75
 var status = "Dead"
@@ -17,6 +18,7 @@ func _ready():
 	death = get_node("Death")
 	slow = get_node("Slowness")
 	stun = get_node("Stun")
+	main = get_node("/root/Game")
 
 
 func _physics_process(_delta):
@@ -73,6 +75,8 @@ func take_air_damage():
 func _on_timer_timeout():
 	visible = false
 	position = Vector2(1250, 625)
+	if main.wave == 4:
+		queue_free()
 
 
 func reset():

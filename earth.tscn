@@ -10,7 +10,7 @@ height = 68.0
 [node name="Earth" type="Area2D"]
 top_level = true
 collision_layer = 0
-collision_mask = 63
+collision_mask = 831
 script = ExtResource("1_c5q8l")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

@@ -8,6 +8,7 @@ var slow
 var stun
 var status
 var direction
+var main
 var health = 0
 var speed = 100
 
@@ -18,6 +19,7 @@ func _ready():
 	slow = get_node("Slowness")
 	stun = get_node("Stun")
 	status = "Alive"
+	main = get_node("/root/Game")
 
 
 func _physics_process(_delta):
@@ -34,8 +36,6 @@ func dying():
 	get_node("Ghost").play_dying()
 	death.start()
 	banished.emit()
-	
-
 
 
 func take_fire_damage():
@@ -76,6 +76,8 @@ func take_air_damage():
 func _on_death_timeout():
 	visible = false
 	position = Vector2(1250, 625)
+	if main.wave == 4:
+		queue_free()
 
 
 func _on_game_over_menu():

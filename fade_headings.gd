@@ -10,3 +10,7 @@ func two():
 
 func three():
 	play("Wave 3")
+
+
+func endless():
+	play("Endless")

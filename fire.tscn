@@ -11,7 +11,7 @@ height = 378.0
 top_level = true
 scale = Vector2(0.175, 0.175)
 collision_layer = 0
-collision_mask = 63
+collision_mask = 831
 script = ExtResource("1_jodje")
 
 [node name="Fire Spell" type="Sprite2D" parent="."]
