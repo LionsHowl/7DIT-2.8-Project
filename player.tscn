@@ -529,7 +529,7 @@ shape = SubResource("CapsuleShape2D_7lj2o")
 [node name="Spellbook" parent="." instance=ExtResource("45_e5lvw")]
 position = Vector2(-1, 12)
 
-[node name="Hurt Box" type="Node2D" parent="."]
+[node name="Hurt Box" type="Node" parent="."]
 unique_name_in_owner = true
 
 [node name="Weak_Mid" type="Area2D" parent="Hurt Box"]
@@ -541,21 +541,21 @@ position = Vector2(0, 4)
 shape = SubResource("CapsuleShape2D_d88m1")
 debug_color = Color(1, 0, 0.0784314, 0.141176)
 
-[node name="Potion Pick-up" type="Area2D" parent="Hurt Box"]
-collision_layer = 128
-collision_mask = 128
-script = ExtResource("118_moyo8")
+[node name="Strong" type="Area2D" parent="Hurt Box"]
+collision_layer = 0
+collision_mask = 544
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurt Box/Potion Pick-up"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurt Box/Strong"]
 position = Vector2(0, 4)
 shape = SubResource("CapsuleShape2D_d88m1")
 debug_color = Color(1, 0, 0.0784314, 0.141176)
 
-[node name="Strong" type="Area2D" parent="Hurt Box"]
-collision_layer = 0
-collision_mask = 32
+[node name="Potion Pick-up" type="Area2D" parent="."]
+collision_layer = 128
+collision_mask = 128
+script = ExtResource("118_moyo8")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurt Box/Strong"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Potion Pick-up"]
 position = Vector2(0, 4)
 shape = SubResource("CapsuleShape2D_d88m1")
 debug_color = Color(1, 0, 0.0784314, 0.141176)
