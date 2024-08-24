@@ -7,7 +7,7 @@ var end
 var timer
 var facing
 var stylebox_flat
-var overlaping_weak_mobs
+var overlaping_weaker_mobs
 var direction
 var overlaping_strong_mobs
 var status = "Paused"
@@ -26,7 +26,7 @@ func _ready():
 func _physics_process(delta):
 	if status == "Alive":
 		direction = Input.get_vector("move_left","move_right","move_up","move_down")
-		overlaping_weak_mobs = %"Hurt Box/Weak_Mid".get_overlapping_bodies()
+		overlaping_weaker_mobs = %"Hurt Box/Weak_Mid".get_overlapping_bodies()
 		overlaping_strong_mobs = %"Hurt Box/Strong".get_overlapping_bodies()
 		
 		velocity = direction * 150
@@ -48,8 +48,9 @@ func _physics_process(delta):
 				else:
 					%"Animated Body".play_idlel()
 		
-		if overlaping_weak_mobs.size() > 0:
-			health -= 5 * overlaping_weak_mobs.size() * delta
+		if overlaping_weaker_mobs.size() > 0:
+			print(overlaping_weaker_mobs)
+			health -= 5 * overlaping_weaker_mobs.size() * delta
 		elif overlaping_strong_mobs.size() > 0:
 			health -= 10 * overlaping_strong_mobs.size() * delta
 		%"Health Bar".value = health
