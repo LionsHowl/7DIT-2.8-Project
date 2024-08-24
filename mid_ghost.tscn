@@ -41,7 +41,7 @@
 [ext_resource type="Texture2D" uid="uid://benteosmprmcn" path="res://PNG/Wraith_01/PNG Sequences/Hurt/Wraith_01_Hurt_009.png" id="38_xgny0"]
 [ext_resource type="Texture2D" uid="uid://bqnkmiwabqe8w" path="res://PNG/Wraith_01/PNG Sequences/Hurt/Wraith_01_Hurt_010.png" id="39_cgh5u"]
 [ext_resource type="Texture2D" uid="uid://0gpb3n6s7rdd" path="res://PNG/Wraith_01/PNG Sequences/Hurt/Wraith_01_Hurt_011.png" id="40_uhax8"]
-[ext_resource type="Script" path="res://area_2d.gd" id="42_1w0ok"]
+[ext_resource type="Script" path="res://health_boast.gd" id="42_hct8s"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_54scf"]
 animations = [{
@@ -207,10 +207,10 @@ one_shot = true
 [node name="Stun" type="Timer" parent="."]
 one_shot = true
 
-[node name="Area2D" type="Area2D" parent="."]
-script = ExtResource("42_1w0ok")
+[node name="Health Boast" type="Area2D" parent="."]
+script = ExtResource("42_hct8s")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Health Boast"]
 position = Vector2(-23, -44)
 shape = SubResource("CapsuleShape2D_meshf")
 
