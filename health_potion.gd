@@ -1,5 +1,7 @@
 extends Timer
 
+signal clear
+
 var x
 var y
 var spawn
@@ -8,16 +10,13 @@ var rng = RandomNumberGenerator.new()
 
 
 func _ready():
-	area = preload("res://potion.tscn")
-	
+	area = preload("res://potion.tscn")	
 	
 	rng.randomize()
-	start()
 
 
 func _on_menu_start():
-	pass
-	
+	start()
 
 
 func _on_player_dead():
@@ -32,3 +31,7 @@ func _on_timeout():
 	add_child(spawn)
 	spawn.global_position = Vector2(x, y)
 	start()
+
+
+func _on_game_over_menu():
+	clear.emit()

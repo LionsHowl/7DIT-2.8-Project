@@ -49,7 +49,6 @@ func _physics_process(delta):
 					%"Animated Body".play_idlel()
 		
 		if overlaping_weaker_mobs.size() > 0:
-			print(overlaping_weaker_mobs)
 			health -= 5 * overlaping_weaker_mobs.size() * delta
 		elif overlaping_strong_mobs.size() > 0:
 			health -= 10 * overlaping_strong_mobs.size() * delta
