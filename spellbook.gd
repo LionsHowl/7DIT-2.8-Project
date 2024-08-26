@@ -6,6 +6,7 @@ var earth
 var air
 var cast
 var shooting_point
+var timer
 var spell = "Fire"
 
 
@@ -14,6 +15,7 @@ func _ready():
 	water = preload("res://water.tscn")
 	earth = preload("res://earth.tscn")
 	air = preload("res://air.tscn")
+	timer = get_node("Timer")
 
 
 func _process(_delta):
@@ -45,3 +47,11 @@ func shoot():
 
 func _on_timer_timeout():
 	shoot()
+
+
+func _on_player_fight():
+	timer.start()
+
+
+func _on_player_dead() -> void:
+	timer.stop()

@@ -1,6 +1,7 @@
 extends CharacterBody2D
 
 signal dead
+signal fight
 
 var health
 var end
@@ -66,7 +67,7 @@ func _physics_process(delta):
 
 func _on_dead():
 	process_mode = Node.PROCESS_MODE_ALWAYS
-	timer = get_node("Timer")
+	timer = get_node("Death")
 	%"Health Bar".visible = false
 	get_node("Spellbook").visible = false
 	get_tree().paused = true
@@ -89,10 +90,12 @@ func _on_game_start():
 	position = Vector2(560, 245)
 	visible = true
 	health = 100
-	
 	get_node("Spellbook").visible = true
 	%"Health Bar".visible = true
+	
+	fight.emit()
 
 
 func _on_game_over_menu():
 	visible = false
+	position = Vector2(560, 245)

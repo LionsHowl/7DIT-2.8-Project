@@ -572,9 +572,11 @@ value = 100.0
 show_percentage = false
 metadata/_edit_use_anchors_ = true
 
-[node name="Timer" type="Timer" parent="."]
+[node name="Death" type="Timer" parent="."]
 wait_time = 1.364
 one_shot = true
 
 [connection signal="dead" from="." to="." method="_on_dead"]
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="dead" from="." to="Spellbook" method="_on_player_dead"]
+[connection signal="fight" from="." to="Spellbook" method="_on_player_fight"]
+[connection signal="timeout" from="Death" to="." method="_on_timer_timeout"]
