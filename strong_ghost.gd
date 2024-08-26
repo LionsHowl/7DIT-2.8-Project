@@ -9,8 +9,10 @@ var stun
 var status
 var direction
 var main
+var free
 var health = 0
 var speed = 100
+var prep = 0
 
 
 func _ready():
@@ -28,6 +30,11 @@ func _physics_process(_delta):
 	if health > 0:
 		velocity = direction * speed
 		move_and_slide()
+	if prep == 0:
+		if get_parent().name == "Endless":
+			free = get_node("/root/Game/Endless")
+			free.clear.connect(_on_clear)
+			prep = 1
 
 
 func dying():
@@ -104,3 +111,7 @@ func _on_slowness_timeout():
 
 func _on_stun_timeout():
 	speed = 100
+
+
+func _on_clear():
+	queue_free()

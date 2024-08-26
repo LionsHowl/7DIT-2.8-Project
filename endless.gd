@@ -1,6 +1,7 @@
 extends Node
 
 signal summon(name)
+signal clear
 
 var weak
 var mid
@@ -74,3 +75,7 @@ func _on_timer_timeout():
 
 func _on_game_banish():
 	spawn()
+
+
+func _on_game_over_menu():
+	clear.emit()
