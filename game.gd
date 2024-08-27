@@ -25,10 +25,17 @@ func _on_menu_start():
 	%"Fade Headings".one()
 
 
-func _on_ghost_banished(): 
-	mob_banished += 1
+func _on_ghost_banished(type):
 	if wave == 4:
 		banish.emit()
+		if type == "weak":
+			mob_banished += 1
+		elif type == "mid":
+			mob_banished += 2
+		elif type == "strong":
+			mob_banished += 3
+	else:
+		mob_banished += 1
 	if wave == 1 and mob_banished == 6:
 		wave = 2
 		mob_banished = 0
@@ -43,6 +50,7 @@ func _on_ghost_banished():
 		%"Fade Headings".three()
 	elif wave == 3 and mob_banished == 10:
 		wave = 4
+		mob_banished = 38
 		get_tree().paused = true
 		
 		%"Fade Headings".endless()

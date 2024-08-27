@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-signal banished
+signal banished(type)
 
 var player
 var death
@@ -42,7 +42,7 @@ func dying():
 	
 	get_node("Ghost").play_dying()
 	death.start()
-	banished.emit()
+	banished.emit("strong")
 
 
 func take_fire_damage():

@@ -4259,6 +4259,7 @@ z_index = 1
 [connection signal="summon" from="Endless" to="." method="_on_endless_summon"]
 [connection signal="timeout" from="Endless/Timer" to="Endless" method="_on_timer_timeout"]
 [connection signal="dead" from="Player" to="Respawn" method="_on_player_dead"]
+[connection signal="over" from="Player" to="Game Over" method="_on_player_over"]
 [connection signal="menu" from="Game Over" to="Wave 1 Mobs/Weak Ghost" method="_on_game_over_menu"]
 [connection signal="menu" from="Game Over" to="Wave 1 Mobs/Weak Ghost2" method="_on_game_over_menu"]
 [connection signal="menu" from="Game Over" to="Wave 1 Mobs/Weak Ghost3" method="_on_game_over_menu"]

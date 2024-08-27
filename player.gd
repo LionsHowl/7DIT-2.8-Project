@@ -2,9 +2,9 @@ extends CharacterBody2D
 
 signal dead
 signal fight
+signal over
 
 var health
-var end
 var timer
 var facing
 var stylebox_flat
@@ -16,7 +16,6 @@ var status = "Paused"
 
 func _ready():
 	process_mode = Node.PROCESS_MODE_PAUSABLE
-	end = get_node("/root/Game/Game Over")
 	stylebox_flat = StyleBoxFlat.new()
 	stylebox_flat.corner_radius_top_left = 5
 	stylebox_flat.corner_radius_top_right = 5
@@ -80,8 +79,8 @@ func _on_dead():
 
 
 func _on_timer_timeout():
-	end.visible = true
 	process_mode = Node.PROCESS_MODE_PAUSABLE
+	over.emit()
 
 
 func _on_game_start():
