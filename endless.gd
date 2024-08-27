@@ -1,6 +1,6 @@
 extends Node
 
-signal summon(name)
+signal summon()
 signal clear
 
 var weak
@@ -19,6 +19,10 @@ func _ready() -> void:
 	weak = preload("res://weak_ghost.tscn")
 	mid = preload("res://mid_ghost.tscn")
 	strong = preload("res://strong_ghost.tscn")
+
+
+func emit_summon_signal():
+	summon.emit()
 
 
 func spawn():
@@ -47,20 +51,19 @@ func spawn():
 		x = -25
 		y = rng.randi_range(-50, 700)
 	mob.name = str(id)
-	
-	mob.visible = false
-	add_child(mob)
-	summon.emit(str(id))
 	id += 1
+	mob.visible = false
+	call_deferred("add_child", mob)
+	call_deferred("emit_summon_signal")
 	if type == 3:
-		mob.collision_layer = (1 << 7) | (1 << 9)
-		mob.collision_mask = (1 << 7) | (1 << 9)
+		mob.call_deferred("set_collision_layer", (1 << 7) | (1 << 9))
+		mob.call_deferred("set_collision_mask", (1 << 7) | (1 << 9))
 	else:
-		mob.collision_layer = (1 << 7) | (1 << 8)
-		mob.collision_mask = (1 << 7) | (1 << 8)
-	mob.scale = Vector2(0.192, 0.192)
-	mob.global_position = Vector2(x, y)
-	mob.visible = true
+		mob.call_deferred("set_collision_layer", (1 << 7) | (1 << 8))
+		mob.call_deferred("set_collision_mask", (1 << 7) | (1 << 8))
+	mob.call_deferred("set_scale", Vector2(0.192, 0.192))
+	mob.call_deferred("set_global_position", Vector2(x, y))
+	mob.call_deferred("set_visible", true)
 
 
 func _on_game_endless():

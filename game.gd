@@ -9,7 +9,9 @@ signal banish
 
 var mob_banished
 var wave
+var ghost
 var halt = "yes"
+var id = 1
 
 
 func _enter_tree():
@@ -68,5 +70,7 @@ func _on_fade_headings_animation_finished(anim_name):
 		endless.emit()
 
 
-func _on_endless_summon(name):
-	get_node("/root/Game/Endless/" + name).banished.connect(_on_ghost_banished)
+func _on_endless_summon():
+	ghost = get_node("/root/Game/Endless/" + str(id))
+	ghost.banished.connect(_on_ghost_banished)
+	id += 1
