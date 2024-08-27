@@ -133,15 +133,15 @@ position = Vector2(284, 22)
 scale = Vector2(0.7, 0.7)
 texture = ExtResource("6_uemld")
 
-[node name="Confirmation" parent="ColorRect/Quit Button/Black Quit" instance=ExtResource("7_cww7n")]
+[node name="Confirmation" parent="ColorRect/Quit Button" instance=ExtResource("7_cww7n")]
 visible = false
-offset_left = -300.0
-offset_top = -700.0
-offset_right = 276.0
-offset_bottom = -467.0
+layout_mode = 0
+offset_left = -4.5
+offset_top = -465.0
+offset_right = 571.5
+offset_bottom = -232.0
 
-[connection signal="quit2" from="." to="ColorRect/Quit Button/Black Quit/Confirmation" method="_on_menu_quit_2"]
 [connection signal="pressed" from="ColorRect/Start Button" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="ColorRect/Instructions Button" to="." method="_on_instructions_button_pressed"]
 [connection signal="pressed" from="ColorRect/Story Button" to="." method="_on_story_button_pressed"]
-[connection signal="pressed" from="ColorRect/Quit Button" to="." method="_on_quit_button_pressed"]
+[connection signal="pressed" from="ColorRect/Quit Button" to="ColorRect/Quit Button/Confirmation" method="_on_quit_button_pressed"]

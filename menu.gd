@@ -3,7 +3,6 @@ extends CanvasLayer
 signal start
 signal instructions
 signal story
-signal quit2
 
 
 func _on_start_button_pressed():
@@ -34,7 +33,3 @@ func _on_story_button_pressed():
 
 func _on_game_over_menu():
 	visible = true
-
-
-func _on_quit_button_pressed():
-	quit2.emit()
