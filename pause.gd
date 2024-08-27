@@ -5,15 +5,12 @@ func _process(_delta):
 	if Input.is_action_just_pressed("pause"):
 		if visible == true:
 			visible = false
-			get_parent().menu = "no"
 			get_tree().set_pause(false)
-		else:
+		elif get_parent().halt == "no":
 			visible = true
 			get_tree().set_pause(true)
-			get_parent().menu = "yes"
 
 
 func _on_back_button_pressed():
 	visible = false
 	get_tree().set_pause(false)
-	get_parent().menu = "no"

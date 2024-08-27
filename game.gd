@@ -9,7 +9,7 @@ signal banish
 
 var mob_banished
 var wave
-var menu = "yes"
+var halt = "yes"
 
 
 func _enter_tree():
@@ -19,7 +19,6 @@ func _enter_tree():
 func _on_menu_start():
 	wave = 1
 	mob_banished = 0
-	menu = "no"
 	
 	%"Fade Headings".one()
 
@@ -49,13 +48,12 @@ func _on_ghost_banished():
 
 func _process(_delta):
 	if Input.is_action_just_pressed("quit"):
-		print(1)
-		print(get_tree().paused)
-		print(menu)
-		if get_tree().paused != true and menu == "no":
-			print(2)
+		if get_tree().paused != true and halt == "no":
 			quit.emit()
-			print(5)
+	if get_tree().paused == true:
+		halt = "yes"
+	else:
+		halt = "no"
 
 
 func _on_fade_headings_animation_finished(anim_name):
