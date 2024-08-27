@@ -62,8 +62,8 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_j37n3")
 theme_override_styles/normal = SubResource("StyleBoxFlat_mlkpc")
 
 [node name="Back" type="Sprite2D" parent="ColorRect/Back Button"]
-position = Vector2(284, 22)
-scale = Vector2(0.935891, 0.935891)
+position = Vector2(284, 22.5)
+scale = Vector2(0.746, 0.746)
 texture = ExtResource("2_f80ea")
 
 [node name="Quit Button" type="Button" parent="ColorRect"]

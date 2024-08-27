@@ -1,8 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://bomdlh7d1w74d"]
+[gd_scene load_steps=13 format=3 uid="uid://bomdlh7d1w74d"]
 
 [ext_resource type="Script" path="res://instuctions.gd" id="1_s5i7c"]
 [ext_resource type="Texture2D" uid="uid://urbn0rp1mx8n" path="res://Text/intstructions_text.png" id="2_7hvyc"]
 [ext_resource type="Texture2D" uid="uid://cwy67a2k8wq2p" path="res://Text/menu_text.png" id="3_uhtny"]
+[ext_resource type="Texture2D" uid="uid://cmv2qvfpnuv8d" path="res://Text/next.png" id="4_p431f"]
+[ext_resource type="Texture2D" uid="uid://bpgg6dmutdbbt" path="res://Text/back.png" id="5_y3l3v"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0bywd"]
 bg_color = Color(0.756863, 0.756863, 0.756863, 1)
@@ -27,10 +29,27 @@ corner_radius_top_right = 100
 corner_radius_bottom_right = 100
 corner_radius_bottom_left = 100
 
+[sub_resource type="GDScript" id="GDScript_uw0tj"]
+script/source = "extends ColorRect
+"
+
+[sub_resource type="GDScript" id="GDScript_r0aux"]
+script/source = "extends ColorRect
+"
+
+[sub_resource type="GDScript" id="GDScript_hrrdn"]
+script/source = "extends ColorRect
+"
+
+[sub_resource type="GDScript" id="GDScript_ih5k8"]
+script/source = "extends ColorRect
+"
+
 [node name="Instuctions" type="CanvasLayer"]
 script = ExtResource("1_s5i7c")
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="Main" type="ColorRect" parent="."]
+unique_name_in_owner = true
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -38,49 +57,610 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 0.588235)
 
-[node name="Instructions Title" type="Sprite2D" parent="ColorRect"]
-position = Vector2(576, 109)
+[node name="Instructions Title" type="Sprite2D" parent="Main"]
+position = Vector2(576, 82)
+scale = Vector2(1.25, 1.25)
 texture = ExtResource("2_7hvyc")
 
-[node name="Instructions" type="Label" parent="ColorRect"]
+[node name="Instructions" type="Label" parent="Main"]
 layout_mode = 0
-offset_left = 279.0
+offset_left = 278.0
 offset_top = 165.0
 offset_right = 874.0
-offset_bottom = 512.0
+offset_bottom = 485.0
 theme_override_font_sizes/font_size = 23
 text = "W or up arrow - Move up
 A or left arrow - Move right
 S or down arrow - Move down
 D or right arrow - Move Right
 Mouse - Aim the Spellbook
-1, Z, or M - Fire Spell
-2, X, or Comma - Water Spell
-3, C, or Fullstop - Earth spell
-4, V, or / - Air Spell
-esc or CMD/CTRL + Q - Quit game"
+P, E, shift or space - Pause
+Esc or CMD/CTRL + Q - Quit game"
+vertical_alignment = 3
 
-[node name="Menu Button" type="Button" parent="ColorRect"]
+[node name="Menu Button" type="Button" parent="Main"]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -284.0
-offset_top = 200.0
-offset_right = 284.0
-offset_bottom = 245.0
+anchors_preset = -1
+anchor_left = 0.500217
+anchor_top = 0.471451
+anchor_right = 0.500217
+anchor_bottom = 0.471451
+offset_left = -298.25
+offset_top = 199.5
+offset_right = 297.75
+offset_bottom = 244.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_styles/hover = SubResource("StyleBoxFlat_0bywd")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_w05hn")
 theme_override_styles/normal = SubResource("StyleBoxFlat_uimse")
+metadata/_edit_use_anchors_ = true
 
-[node name="Menu" type="Sprite2D" parent="ColorRect/Menu Button"]
-position = Vector2(276, 22.5)
+[node name="Menu" type="Sprite2D" parent="Main/Menu Button"]
+position = Vector2(298, 22.5)
 scale = Vector2(0.725807, 0.725807)
 texture = ExtResource("3_uhtny")
 
-[connection signal="pressed" from="ColorRect/Menu Button" to="." method="_on_menu_button_pressed"]
+[node name="Next Button" type="Button" parent="Main"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.500217
+anchor_top = -0.0810185
+anchor_right = 0.500217
+anchor_bottom = -0.0810185
+offset_left = -298.25
+offset_top = 620.5
+offset_right = 297.75
+offset_bottom = 665.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/hover = SubResource("StyleBoxFlat_0bywd")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_w05hn")
+theme_override_styles/normal = SubResource("StyleBoxFlat_uimse")
+metadata/_edit_use_anchors_ = true
+
+[node name="Next" type="Sprite2D" parent="Main/Next Button"]
+position = Vector2(298, 22.5)
+scale = Vector2(0.725807, 0.725807)
+texture = ExtResource("4_p431f")
+
+[node name="Part 2" type="CanvasLayer" parent="."]
+
+[node name="Fire" type="ColorRect" parent="Part 2"]
+unique_name_in_owner = true
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.588235)
+script = SubResource("GDScript_uw0tj")
+metadata/_edit_use_anchors_ = true
+
+[node name="Instructions Title" type="Sprite2D" parent="Part 2/Fire"]
+position = Vector2(576, 82)
+scale = Vector2(1.25, 1.25)
+texture = ExtResource("2_7hvyc")
+
+[node name="Fire Spell" type="Label" parent="Part 2/Fire"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.000217014
+anchor_top = -0.0285494
+anchor_right = 0.000217014
+anchor_bottom = -0.0285494
+offset_left = 277.75
+offset_top = 165.5
+offset_right = 873.75
+offset_bottom = 512.5
+theme_override_font_sizes/font_size = 23
+text = "The game has four spells for you to use. These spells each have different effects that can be combined to make strategies to help you survive.
+
+The first spell is the fire spell. This default spell the player starts to use when you start the game. The fire spell deals double damage and can be activated by  pressing the keys; 1, Z, or M."
+autowrap_mode = 3
+metadata/_edit_use_anchors_ = true
+
+[node name="Back Button" type="Button" parent="Part 2/Fire"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.500217
+anchor_top = 0.029321
+anchor_right = 0.500217
+anchor_bottom = 0.029321
+offset_left = -298.25
+offset_top = 423.0
+offset_right = 297.75
+offset_bottom = 468.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/hover = SubResource("StyleBoxFlat_0bywd")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_w05hn")
+theme_override_styles/normal = SubResource("StyleBoxFlat_uimse")
+metadata/_edit_use_anchors_ = true
+
+[node name="Back" type="Sprite2D" parent="Part 2/Fire/Back Button"]
+position = Vector2(298, 22.5)
+scale = Vector2(0.725807, 0.725807)
+texture = ExtResource("5_y3l3v")
+
+[node name="Menu Button" type="Button" parent="Part 2/Fire"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.500217
+anchor_top = 0.471451
+anchor_right = 0.500217
+anchor_bottom = 0.471451
+offset_left = -298.25
+offset_top = 199.5
+offset_right = 297.75
+offset_bottom = 244.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/hover = SubResource("StyleBoxFlat_0bywd")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_w05hn")
+theme_override_styles/normal = SubResource("StyleBoxFlat_uimse")
+metadata/_edit_use_anchors_ = true
+
+[node name="Menu" type="Sprite2D" parent="Part 2/Fire/Menu Button"]
+position = Vector2(298, 22.5)
+scale = Vector2(0.725807, 0.725807)
+texture = ExtResource("3_uhtny")
+
+[node name="Next Button" type="Button" parent="Part 2/Fire"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.500217
+anchor_top = -0.0810185
+anchor_right = 0.500217
+anchor_bottom = -0.0810185
+offset_left = -298.25
+offset_top = 620.5
+offset_right = 297.75
+offset_bottom = 665.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/hover = SubResource("StyleBoxFlat_0bywd")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_w05hn")
+theme_override_styles/normal = SubResource("StyleBoxFlat_uimse")
+metadata/_edit_use_anchors_ = true
+
+[node name="Next" type="Sprite2D" parent="Part 2/Fire/Next Button"]
+position = Vector2(298, 22.5)
+scale = Vector2(0.725807, 0.725807)
+texture = ExtResource("4_p431f")
+
+[node name="Part 3" type="CanvasLayer" parent="Part 2"]
+
+[node name="Water" type="ColorRect" parent="Part 2/Part 3"]
+unique_name_in_owner = true
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.588235)
+script = SubResource("GDScript_r0aux")
+metadata/_edit_use_anchors_ = true
+
+[node name="Instructions Title" type="Sprite2D" parent="Part 2/Part 3/Water"]
+position = Vector2(576, 82)
+scale = Vector2(1.25, 1.25)
+texture = ExtResource("2_7hvyc")
+
+[node name="Water Spell" type="Label" parent="Part 2/Part 3/Water"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.000217014
+anchor_top = -0.0285494
+anchor_right = 0.000217014
+anchor_bottom = -0.0285494
+offset_left = 277.75
+offset_top = 165.5
+offset_right = 873.75
+offset_bottom = 512.5
+theme_override_font_sizes/font_size = 23
+text = "The game has four spells for you to use. These spells each have different effects that can be combined to make strategies to help you survive.
+
+The second spell is the water spell. The water spell slows enemies down by half for two and a half seconds. The water spell can be activated by pressing the keys; 2, X, or Comma."
+autowrap_mode = 3
+metadata/_edit_use_anchors_ = true
+
+[node name="Back Button" type="Button" parent="Part 2/Part 3/Water"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.500217
+anchor_top = 0.029321
+anchor_right = 0.500217
+anchor_bottom = 0.029321
+offset_left = -298.25
+offset_top = 423.0
+offset_right = 297.75
+offset_bottom = 468.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/hover = SubResource("StyleBoxFlat_0bywd")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_w05hn")
+theme_override_styles/normal = SubResource("StyleBoxFlat_uimse")
+metadata/_edit_use_anchors_ = true
+
+[node name="Back" type="Sprite2D" parent="Part 2/Part 3/Water/Back Button"]
+position = Vector2(298, 22.5)
+scale = Vector2(0.725807, 0.725807)
+texture = ExtResource("5_y3l3v")
+
+[node name="Menu Button" type="Button" parent="Part 2/Part 3/Water"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.500217
+anchor_top = 0.471451
+anchor_right = 0.500217
+anchor_bottom = 0.471451
+offset_left = -298.25
+offset_top = 199.5
+offset_right = 297.75
+offset_bottom = 244.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/hover = SubResource("StyleBoxFlat_0bywd")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_w05hn")
+theme_override_styles/normal = SubResource("StyleBoxFlat_uimse")
+metadata/_edit_use_anchors_ = true
+
+[node name="Menu" type="Sprite2D" parent="Part 2/Part 3/Water/Menu Button"]
+position = Vector2(298, 22.5)
+scale = Vector2(0.725807, 0.725807)
+texture = ExtResource("3_uhtny")
+
+[node name="Next Button" type="Button" parent="Part 2/Part 3/Water"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.500217
+anchor_top = -0.0810185
+anchor_right = 0.500217
+anchor_bottom = -0.0810185
+offset_left = -298.25
+offset_top = 620.5
+offset_right = 297.75
+offset_bottom = 665.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/hover = SubResource("StyleBoxFlat_0bywd")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_w05hn")
+theme_override_styles/normal = SubResource("StyleBoxFlat_uimse")
+metadata/_edit_use_anchors_ = true
+
+[node name="Next" type="Sprite2D" parent="Part 2/Part 3/Water/Next Button"]
+position = Vector2(298, 22.5)
+scale = Vector2(0.725807, 0.725807)
+texture = ExtResource("4_p431f")
+
+[node name="Part 4" type="CanvasLayer" parent="Part 2/Part 3"]
+
+[node name="Earth" type="ColorRect" parent="Part 2/Part 3/Part 4"]
+unique_name_in_owner = true
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.588235)
+script = SubResource("GDScript_hrrdn")
+metadata/_edit_use_anchors_ = true
+
+[node name="Instructions Title" type="Sprite2D" parent="Part 2/Part 3/Part 4/Earth"]
+position = Vector2(576, 82)
+scale = Vector2(1.25, 1.25)
+texture = ExtResource("2_7hvyc")
+
+[node name="Earth Spell" type="Label" parent="Part 2/Part 3/Part 4/Earth"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.000217014
+anchor_top = -0.0285494
+anchor_right = 0.000217014
+anchor_bottom = -0.0285494
+offset_left = 277.75
+offset_top = 165.5
+offset_right = 873.75
+offset_bottom = 512.5
+theme_override_font_sizes/font_size = 23
+text = "The game has four spells for you to use. These spells each have different effects that can be combined to make strategies to help you survive.
+
+The third spell is the earth spell. The earth spell stuns enemies for one second. The earth spell can be activated by pressing the keys; 3, C, or Fullstop."
+autowrap_mode = 3
+metadata/_edit_use_anchors_ = true
+
+[node name="Back Button" type="Button" parent="Part 2/Part 3/Part 4/Earth"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.500217
+anchor_top = 0.029321
+anchor_right = 0.500217
+anchor_bottom = 0.029321
+offset_left = -298.25
+offset_top = 423.0
+offset_right = 297.75
+offset_bottom = 468.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/hover = SubResource("StyleBoxFlat_0bywd")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_w05hn")
+theme_override_styles/normal = SubResource("StyleBoxFlat_uimse")
+metadata/_edit_use_anchors_ = true
+
+[node name="Back" type="Sprite2D" parent="Part 2/Part 3/Part 4/Earth/Back Button"]
+position = Vector2(298, 22.5)
+scale = Vector2(0.725807, 0.725807)
+texture = ExtResource("5_y3l3v")
+
+[node name="Menu Button" type="Button" parent="Part 2/Part 3/Part 4/Earth"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.500217
+anchor_top = 0.471451
+anchor_right = 0.500217
+anchor_bottom = 0.471451
+offset_left = -298.25
+offset_top = 199.5
+offset_right = 297.75
+offset_bottom = 244.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/hover = SubResource("StyleBoxFlat_0bywd")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_w05hn")
+theme_override_styles/normal = SubResource("StyleBoxFlat_uimse")
+metadata/_edit_use_anchors_ = true
+
+[node name="Menu" type="Sprite2D" parent="Part 2/Part 3/Part 4/Earth/Menu Button"]
+position = Vector2(298, 22.5)
+scale = Vector2(0.725807, 0.725807)
+texture = ExtResource("3_uhtny")
+
+[node name="Next Button" type="Button" parent="Part 2/Part 3/Part 4/Earth"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.500217
+anchor_top = -0.0810185
+anchor_right = 0.500217
+anchor_bottom = -0.0810185
+offset_left = -298.25
+offset_top = 620.5
+offset_right = 297.75
+offset_bottom = 665.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/hover = SubResource("StyleBoxFlat_0bywd")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_w05hn")
+theme_override_styles/normal = SubResource("StyleBoxFlat_uimse")
+metadata/_edit_use_anchors_ = true
+
+[node name="Next" type="Sprite2D" parent="Part 2/Part 3/Part 4/Earth/Next Button"]
+position = Vector2(298, 22.5)
+scale = Vector2(0.725807, 0.725807)
+texture = ExtResource("4_p431f")
+
+[node name="Part 5" type="CanvasLayer" parent="Part 2/Part 3/Part 4"]
+
+[node name="Air" type="ColorRect" parent="Part 2/Part 3/Part 4/Part 5"]
+unique_name_in_owner = true
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.588235)
+script = SubResource("GDScript_ih5k8")
+metadata/_edit_use_anchors_ = true
+
+[node name="Instructions Title" type="Sprite2D" parent="Part 2/Part 3/Part 4/Part 5/Air"]
+position = Vector2(576, 82)
+scale = Vector2(1.25, 1.25)
+texture = ExtResource("2_7hvyc")
+
+[node name="Air Spell" type="Label" parent="Part 2/Part 3/Part 4/Part 5/Air"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.000217014
+anchor_top = -0.0285494
+anchor_right = 0.000217014
+anchor_bottom = -0.0285494
+offset_left = 277.75
+offset_top = 165.5
+offset_right = 873.75
+offset_bottom = 512.5
+theme_override_font_sizes/font_size = 23
+text = "The game has four spells for you to use. These spells each have different effects that can be combined to make strategies to help you survive.
+
+The fourth and final spell is the air spell. The air spell has a greater range, about double the other spells' range. The air spell can be activated by pressing the keys; 4, V, or /."
+autowrap_mode = 3
+metadata/_edit_use_anchors_ = true
+
+[node name="Back Button" type="Button" parent="Part 2/Part 3/Part 4/Part 5/Air"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.500217
+anchor_top = 0.029321
+anchor_right = 0.500217
+anchor_bottom = 0.029321
+offset_left = -298.25
+offset_top = 423.0
+offset_right = 297.75
+offset_bottom = 468.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/hover = SubResource("StyleBoxFlat_0bywd")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_w05hn")
+theme_override_styles/normal = SubResource("StyleBoxFlat_uimse")
+metadata/_edit_use_anchors_ = true
+
+[node name="Back" type="Sprite2D" parent="Part 2/Part 3/Part 4/Part 5/Air/Back Button"]
+position = Vector2(298, 22.5)
+scale = Vector2(0.725807, 0.725807)
+texture = ExtResource("5_y3l3v")
+
+[node name="Menu Button" type="Button" parent="Part 2/Part 3/Part 4/Part 5/Air"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.500217
+anchor_top = 0.471451
+anchor_right = 0.500217
+anchor_bottom = 0.471451
+offset_left = -298.25
+offset_top = 199.5
+offset_right = 297.75
+offset_bottom = 244.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/hover = SubResource("StyleBoxFlat_0bywd")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_w05hn")
+theme_override_styles/normal = SubResource("StyleBoxFlat_uimse")
+metadata/_edit_use_anchors_ = true
+
+[node name="Menu" type="Sprite2D" parent="Part 2/Part 3/Part 4/Part 5/Air/Menu Button"]
+position = Vector2(298, 22.5)
+scale = Vector2(0.725807, 0.725807)
+texture = ExtResource("3_uhtny")
+
+[node name="Next Button" type="Button" parent="Part 2/Part 3/Part 4/Part 5/Air"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.500217
+anchor_top = -0.0810185
+anchor_right = 0.500217
+anchor_bottom = -0.0810185
+offset_left = -298.25
+offset_top = 620.5
+offset_right = 297.75
+offset_bottom = 665.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/hover = SubResource("StyleBoxFlat_0bywd")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_w05hn")
+theme_override_styles/normal = SubResource("StyleBoxFlat_uimse")
+metadata/_edit_use_anchors_ = true
+
+[node name="Next" type="Sprite2D" parent="Part 2/Part 3/Part 4/Part 5/Air/Next Button"]
+position = Vector2(298, 22.5)
+scale = Vector2(0.725807, 0.725807)
+texture = ExtResource("4_p431f")
+
+[node name="Part 6" type="CanvasLayer" parent="Part 2/Part 3/Part 4/Part 5"]
+
+[node name="Score" type="ColorRect" parent="Part 2/Part 3/Part 4/Part 5/Part 6"]
+unique_name_in_owner = true
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.588235)
+script = SubResource("GDScript_ih5k8")
+metadata/_edit_use_anchors_ = true
+
+[node name="Instructions Title" type="Sprite2D" parent="Part 2/Part 3/Part 4/Part 5/Part 6/Score"]
+position = Vector2(576, 82)
+scale = Vector2(1.25, 1.25)
+texture = ExtResource("2_7hvyc")
+
+[node name="Score" type="Label" parent="Part 2/Part 3/Part 4/Part 5/Part 6/Score"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.000217014
+anchor_top = -0.130401
+anchor_right = 0.000217014
+anchor_bottom = -0.130401
+offset_left = 277.75
+offset_top = 231.5
+offset_right = 873.75
+offset_bottom = 578.5
+theme_override_font_sizes/font_size = 23
+text = "Try and earn as many points in the endless phase of the game by banishing different types of ghosts.
+Weak Ghosts have low damage and low speed. Weak Ghosts are worth 1 point.
+Mid Ghosts have low damage and mid speed. Mid Ghosts are worth 2 points.
+Strong Ghosts have high damage and mid speed. Strong Ghosts are worth 3 points."
+autowrap_mode = 3
+metadata/_edit_use_anchors_ = true
+
+[node name="Back Button" type="Button" parent="Part 2/Part 3/Part 4/Part 5/Part 6/Score"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.500217
+anchor_top = 0.029321
+anchor_right = 0.500217
+anchor_bottom = 0.029321
+offset_left = -298.25
+offset_top = 423.0
+offset_right = 297.75
+offset_bottom = 468.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/hover = SubResource("StyleBoxFlat_0bywd")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_w05hn")
+theme_override_styles/normal = SubResource("StyleBoxFlat_uimse")
+metadata/_edit_use_anchors_ = true
+
+[node name="Back" type="Sprite2D" parent="Part 2/Part 3/Part 4/Part 5/Part 6/Score/Back Button"]
+position = Vector2(298, 22.5)
+scale = Vector2(0.725807, 0.725807)
+texture = ExtResource("5_y3l3v")
+
+[node name="Menu Button" type="Button" parent="Part 2/Part 3/Part 4/Part 5/Part 6/Score"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.500217
+anchor_top = 0.471451
+anchor_right = 0.500217
+anchor_bottom = 0.471451
+offset_left = -298.25
+offset_top = 199.5
+offset_right = 297.75
+offset_bottom = 244.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/hover = SubResource("StyleBoxFlat_0bywd")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_w05hn")
+theme_override_styles/normal = SubResource("StyleBoxFlat_uimse")
+metadata/_edit_use_anchors_ = true
+
+[node name="Menu" type="Sprite2D" parent="Part 2/Part 3/Part 4/Part 5/Part 6/Score/Menu Button"]
+position = Vector2(298, 22.5)
+scale = Vector2(0.725807, 0.725807)
+texture = ExtResource("3_uhtny")
+
+[connection signal="pressed" from="Main/Menu Button" to="." method="_on_menu_button_pressed"]
+[connection signal="pressed" from="Main/Next Button" to="." method="_on_main_fire_pressed"]
+[connection signal="pressed" from="Part 2/Fire/Back Button" to="." method="_on_main_fire_pressed"]
+[connection signal="pressed" from="Part 2/Fire/Menu Button" to="." method="_on_menu_button_pressed"]
+[connection signal="pressed" from="Part 2/Fire/Next Button" to="." method="_on_fire_water_pressed"]
+[connection signal="pressed" from="Part 2/Part 3/Water/Back Button" to="." method="_on_fire_water_pressed"]
+[connection signal="pressed" from="Part 2/Part 3/Water/Menu Button" to="." method="_on_menu_button_pressed"]
+[connection signal="pressed" from="Part 2/Part 3/Water/Next Button" to="." method="_on_water_earth_pressed"]
+[connection signal="pressed" from="Part 2/Part 3/Part 4/Earth/Back Button" to="." method="_on_water_earth_pressed"]
+[connection signal="pressed" from="Part 2/Part 3/Part 4/Earth/Menu Button" to="." method="_on_menu_button_pressed"]
+[connection signal="pressed" from="Part 2/Part 3/Part 4/Earth/Next Button" to="." method="_on_earth_air_pressed"]
+[connection signal="pressed" from="Part 2/Part 3/Part 4/Part 5/Air/Back Button" to="." method="_on_earth_air_pressed"]
+[connection signal="pressed" from="Part 2/Part 3/Part 4/Part 5/Air/Menu Button" to="." method="_on_menu_button_pressed"]
+[connection signal="pressed" from="Part 2/Part 3/Part 4/Part 5/Air/Next Button" to="." method="_on_air_score_pressed"]
+[connection signal="pressed" from="Part 2/Part 3/Part 4/Part 5/Part 6/Score/Back Button" to="." method="_on_air_score_pressed"]
+[connection signal="pressed" from="Part 2/Part 3/Part 4/Part 5/Part 6/Score/Menu Button" to="." method="_on_menu_button_pressed"]
