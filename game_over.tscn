@@ -45,6 +45,7 @@ scale = Vector2(1.63, 1.63)
 texture = ExtResource("2_trmbh")
 
 [node name="Score" type="Label" parent="ColorRect"]
+layout_mode = 0
 offset_top = 275.0
 offset_right = 1152.0
 offset_bottom = 458.0

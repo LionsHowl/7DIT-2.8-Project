@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://c807sqp4yr0to" path="res://player.tscn" id="2_v33ig"]
 [ext_resource type="Texture2D" uid="uid://boihhcbqmikfo" path="res://Spritesheet/roguelikeSheet_transparent.png" id="3_7u1bn"]
 [ext_resource type="PackedScene" uid="uid://dhc1wtbcyfyp5" path="res://mid_ghost.tscn" id="4_s7aa7"]
-[ext_resource type="PackedScene" uid="uid://bsw87ckmy0owt" path="res://strong_ghost.tscn" id="5_jxfxl"]
+[ext_resource type="PackedScene" path="res://strong_ghost.tscn" id="5_jxfxl"]
 [ext_resource type="PackedScene" uid="uid://c6lpnvoeyna2o" path="res://game_over.tscn" id="5_y8vrr"]
 [ext_resource type="PackedScene" uid="uid://g7t6hrmcf2g3" path="res://menu.tscn" id="6_74tg7"]
 [ext_resource type="Script" path="res://endless.gd" id="6_n5f8e"]
@@ -19,7 +19,7 @@
 [ext_resource type="Texture2D" uid="uid://dd0bableu52y3" path="res://Text/Endless.png" id="13_g2u5w"]
 [ext_resource type="Texture2D" uid="uid://bp2d7aeqnkvlp" path="res://Text/Survive.png" id="14_xpyk4"]
 [ext_resource type="PackedScene" uid="uid://daiy68o58dbbr" path="res://health_potion.tscn" id="16_igmdm"]
-[ext_resource type="PackedScene" uid="uid://b6yc2iqcs7s73" path="res://confirmation.tscn" id="17_c0q07"]
+[ext_resource type="PackedScene" path="res://confirmation.tscn" id="17_c0q07"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_5wurq"]
 tile_data = PackedInt32Array(0, 851968, 10, 65536, 851968, 11)

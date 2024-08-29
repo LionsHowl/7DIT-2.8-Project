@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://qrdu5nwrggaf" path="res://Text/instructions_button_text.png" id="4_po4sk"]
 [ext_resource type="Texture2D" uid="uid://cuy1kt3bowmxo" path="res://Text/story_button_text.png" id="5_35vaf"]
 [ext_resource type="Texture2D" uid="uid://ieun8hl7jcup" path="res://Text/quit_text.png" id="6_uemld"]
-[ext_resource type="PackedScene" uid="uid://b6yc2iqcs7s73" path="res://confirmation.tscn" id="7_cww7n"]
+[ext_resource type="PackedScene" path="res://confirmation.tscn" id="7_cww7n"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3ppma"]
 bg_color = Color(0.756863, 0.756863, 0.756863, 1)
