@@ -1,6 +1,6 @@
 extends Node
 
-signal summon()
+signal summon
 signal clear
 
 var weak
