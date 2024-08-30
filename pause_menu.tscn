@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://pause.gd" id="1_y3r2e"]
 [ext_resource type="Texture2D" uid="uid://bpgg6dmutdbbt" path="res://Text/back.png" id="2_f80ea"]
 [ext_resource type="Texture2D" uid="uid://ieun8hl7jcup" path="res://Text/quit_text.png" id="3_5lmt2"]
-[ext_resource type="PackedScene" uid="uid://b6yc2iqcs7s73" path="res://confirmation.tscn" id="4_l73fq"]
+[ext_resource type="PackedScene" uid="uid://dawo4dyiclbj6" path="res://confirmation.tscn" id="4_l73fq"]
 [ext_resource type="Texture2D" uid="uid://cxdkdh6boggij" path="res://Text/paused.png" id="5_p0hub"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w7f2v"]
@@ -82,13 +82,14 @@ position = Vector2(284, 22)
 scale = Vector2(0.7, 0.7)
 texture = ExtResource("3_5lmt2")
 
-[node name="Confirmation" parent="ColorRect/Quit Button/Black Quit" instance=ExtResource("4_l73fq")]
+[node name="Confirmation" parent="ColorRect/Quit Button" instance=ExtResource("4_l73fq")]
 visible = false
 z_index = 1
-offset_left = -300.0
-offset_top = -700.0
-offset_right = 276.0
-offset_bottom = -467.0
+layout_mode = 0
+offset_left = -21.5
+offset_top = -431.0
+offset_right = 588.5
+offset_bottom = -185.0
 
 [node name="Pause" type="Sprite2D" parent="ColorRect"]
 position = Vector2(576, 215)
@@ -96,4 +97,4 @@ scale = Vector2(1.98796, 1.98796)
 texture = ExtResource("5_p0hub")
 
 [connection signal="pressed" from="ColorRect/Back Button" to="." method="_on_back_button_pressed"]
-[connection signal="pressed" from="ColorRect/Quit Button" to="ColorRect/Quit Button/Black Quit/Confirmation" method="_on_menu_quit_2"]
+[connection signal="pressed" from="ColorRect/Quit Button" to="ColorRect/Quit Button/Confirmation" method="_on_quit_button_pressed"]
