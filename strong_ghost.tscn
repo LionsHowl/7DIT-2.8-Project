@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=3 uid="uid://bsw87ckmy0owt"]
+[gd_scene load_steps=45 format=3 uid="uid://3c5pqpgrpkyi"]
 
 [ext_resource type="Texture2D" uid="uid://bb3bktr3di4j6" path="res://PNG/Wraith_03/PNG Sequences/Dying/Wraith_03_Dying_000.png" id="1_rmtql"]
 [ext_resource type="Script" path="res://strong_ghost.gd" id="1_t5b1r"]
