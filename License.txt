@@ -56,6 +56,26 @@
 
 #########################################################################################################################################################################################
 
+	Potion Set #1 Free Version (Health Potion)
+	by TrulyMalicious
+	Other works: https://trulymalicious.itch.io/
+	Itich.io Profile: https://itch.io/profile/trulymalicious
+	X: @trulymalicious
+	Email: malicioustruly@gmail.com
+	
+	This asset was free to use under the copyright laws of Attribution 4.0 International
+	This means I can:
+	1.   Share, copy and redistribute the material in any medium or format for any purpose, even commercially.
+	2.   Adapt, remix, transform, and build upon the material for any purpose, even commercially.
+	3.   And the licensor cannot revoke these freedoms as long as you follow the license terms.
+	As long as I:
+	You must give appropriate credit, provide a link to the license, and indicate if changes were made. You may do so in any reasonable manner, but not in any way that suggests the
+	licensor endorses you or your use.
+
+	License: https://creativecommons.org/licenses/by/4.0/#ref-appropriate-credit
+
+#########################################################################################################################################################################################
+
 	All over assets were sourced from CraftPix and are free to use under copyright laws.
 
 	License: https://craftpix.net/file-licenses/
