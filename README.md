@@ -11,7 +11,7 @@ Oh no, there has been a ***"GHOST BREACH"*** and ghosts are escaping from the un
 
 ## How To Open
 ### Web
-Go to [wdlguard.itch.io/ghost-breach](https://wdlguard.itch.io/ghost-breach) and input the password on the notion page.
+Go to [wdlguard.itch.io/ghost-breach](https://wdlguard.itch.io/ghost-breach) and input the password on the notion page or click Ghost.Breach.by.WDLguard.webloc and input the password on the notion page.
 
 ### Mac
 Download Ghost_Breach-Mac.dmg and then open it. Drag Ghost Breach where you want to store it then delete Ghost_Breach-Mac.dmg. If you are having trouble oping the file, control + click the file and then click open.
